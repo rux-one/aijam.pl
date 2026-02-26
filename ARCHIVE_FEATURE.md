@@ -5,7 +5,7 @@
 The static site generator now automatically separates events into **upcoming** and **past** categories, creating two distinct pages:
 
 - **Homepage** (`/`) - Shows upcoming events only
-- **Archive** (`/archiwum/`) - Shows past events only
+- **Archive** (`/archive/`) - Shows past events only
 
 ## How It Works
 
@@ -47,9 +47,9 @@ if (eventDate >= now) {
 **Shows**: Upcoming events only  
 **Link to archive**: Yes (in section header)
 
-### Archive Page (`/archiwum/`)
+### Archive Page (`/archive/`)
 
-**URL**: `https://aijam.pl/archiwum/`  
+**URL**: `https://aijam.pl/archive/`  
 **Section**: `archiwum_wydarzen`  
 **Shows**: Past events only  
 **Link to homepage**: Yes (back button at bottom)
@@ -58,9 +58,9 @@ if (eventDate >= now) {
 
 The archive page is accessible from:
 
-1. **Main navigation** - `./archiwum` link in header
+1. **Main navigation** - `./archive` link in header
 2. **Homepage events section** - "archiwum" link in section header
-3. **Direct URL** - `/archiwum/`
+3. **Direct URL** - `/archive/`
 
 ## Build Output
 
@@ -72,10 +72,10 @@ Processing: index.md -> /home/bart/code/aijam.pl/dist/index.html
   Upcoming: 3, Past: 6
 ✓ Generated: /home/bart/code/aijam.pl/dist/index.html
 
-Processing: archive.md -> /home/bart/code/aijam.pl/dist/archiwum/index.html
+Processing: archive.md -> /home/bart/code/aijam.pl/dist/archive/index.html
   Events: 7 from API + 0 from markdown = 7 total
   Upcoming: 3, Past: 6
-✓ Generated: /home/bart/code/aijam.pl/dist/archiwum/index.html
+✓ Generated: /home/bart/code/aijam.pl/dist/archive/index.html
 ```
 
 ## Template Differences
@@ -140,7 +140,7 @@ Given current date: **2026-02-26**
 Both pages use clean URLs without `.html` extension:
 
 - Homepage: `/` or `/index.html`
-- Archive: `/archiwum/` or `/archiwum/index.html`
+- Archive: `/archive/` or `/archive/index.html`
 
 Nginx configuration handles both formats automatically.
 

@@ -138,7 +138,7 @@ Events are automatically separated into two categories based on the current date
 - Sorted by date (soonest first)
 
 **Past Events** (`archiwum_wydarzen`)
-- Displayed on archive page (`/archiwum/`)
+- Displayed on archive page (`/archive/`)
 - Events with date < today
 - Sorted by date (most recent first)
 

@@ -275,7 +275,7 @@ async function build() {
     // Process archive page (past events)
     await renderPage(
       'archive.md', 
-      path.join(DIST_DIR, 'archiwum', 'index.html'), 
+      path.join(DIST_DIR, 'archive', 'index.html'), 
       apiEvents,
       { showPastEvents: true }
     );

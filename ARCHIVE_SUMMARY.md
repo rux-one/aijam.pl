@@ -22,7 +22,7 @@ A complete event separation system that automatically distinguishes between upco
 - Sorting: Ascending (soonest first)
 - Link to archive in section header
 
-**Archive Page** (`/archiwum/`)
+**Archive Page** (`/archive/`)
 - Section: `archiwum_wydarzen`
 - Shows: Past events only
 - Sorting: Descending (most recent first)
@@ -53,10 +53,10 @@ Processing: index.md -> /home/bart/code/aijam.pl/dist/index.html
   Upcoming: 0, Past: 9
 ✓ Generated: /home/bart/code/aijam.pl/dist/index.html
 
-Processing: archive.md -> /home/bart/code/aijam.pl/dist/archiwum/index.html
+Processing: archive.md -> /home/bart/code/aijam.pl/dist/archive/index.html
   Events: 7 from API + 0 from markdown = 7 total
   Upcoming: 0, Past: 7
-✓ Generated: /home/bart/code/aijam.pl/dist/archiwum/index.html
+✓ Generated: /home/bart/code/aijam.pl/dist/archive/index.html
 ```
 
 ## 🎨 Visual Differences
@@ -76,9 +76,9 @@ Processing: archive.md -> /home/bart/code/aijam.pl/dist/archiwum/index.html
 ## 🔗 Navigation
 
 Archive page accessible via:
-1. Main navigation: `./archiwum` link
+1. Main navigation: `./archive` link
 2. Homepage events section: "archiwum" link with arrow
-3. Direct URL: `/archiwum/`
+3. Direct URL: `/archive/`
 
 ## 📊 Event Data in Templates
 
@@ -99,7 +99,7 @@ Both templates receive:
 ✅ Archive shows past events only  
 ✅ Events sorted correctly (upcoming: asc, past: desc)  
 ✅ Navigation links work  
-✅ Clean URLs generated (`/archiwum/`)  
+✅ Clean URLs generated (`/archive/`)  
 ✅ Empty states handled gracefully  
 
 ## 📝 Date Comparison Logic
@@ -122,7 +122,7 @@ if (eventDate >= now) {
 ## 🌐 URLs
 
 - Homepage: `https://aijam.pl/`
-- Archive: `https://aijam.pl/archiwum/`
+- Archive: `https://aijam.pl/archive/`
 
 Both support clean URLs without `.html` extension via nginx configuration.
 

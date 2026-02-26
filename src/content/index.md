@@ -42,6 +42,7 @@ about:
     - modele_open_source
     - etyczna_ai
 social:
-  linkedin: "#"
-  github: "#"
+  linkedin: "https://www.linkedin.com/company/ai-jam-lodz/"
+  github: "http://github.com/rux-one/aijam.pl"
+  crossweb: "https://crossweb.pl/cykle-wydarzen/ai-jam-lodz/"
 ---
