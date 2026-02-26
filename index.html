@@ -1,0 +1,420 @@
+
+<!doctype html>
+<html lang="pl" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Jam - meetup Łódź</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            mono: ['JetBrains Mono', 'monospace'],
+            sans: ['Space Grotesk', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0; }
+    }
+    .cursor-blink::after {
+      content: '_';
+      animation: blink 1s infinite;
+    }
+    @keyframes scanline {
+      0% { transform: translateY(-100%); }
+      100% { transform: translateY(100%); }
+    }
+    .scanline {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, currentColor, transparent);
+      opacity: 0.1;
+      animation: scanline 8s linear infinite;
+      pointer-events: none;
+    }
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+    .typing-effect {
+      overflow: hidden;
+      white-space: nowrap;
+      animation: typing 2s steps(40) forwards;
+    }
+    .grid-bg {
+      background-image: 
+        linear-gradient(rgba(0,255,136,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,255,136,0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+    .dark .grid-bg {
+      background-image: 
+        linear-gradient(rgba(0,255,136,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,255,136,0.05) 1px, transparent 1px);
+    }
+  </style>
+  <style>body { box-sizing: border-box; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full bg-stone-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-mono transition-colors duration-300">
+  <div id="app" class="h-full w-full overflow-auto grid-bg">
+   <div class="scanline text-emerald-500"></div><!-- Navigation -->
+   <nav class="sticky top-0 z-50 backdrop-blur-md bg-stone-50/80 dark:bg-zinc-950/80 border-b border-zinc-200 dark:border-zinc-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
+     <div class="flex items-center gap-2">
+      <span class="text-emerald-500 text-lg sm:text-xl">❯</span> <span id="nav-title" class="font-bold text-base sm:text-lg">AIjam.pl</span>
+     </div>
+     <!-- Desktop Navigation -->
+     <div class="hidden sm:flex items-center gap-6">
+      <a href="#events" class="text-sm hover:text-emerald-500 transition-colors">./wydarzenia</a>
+      <a href="#about" class="text-sm hover:text-emerald-500 transition-colors">./o-nas</a>
+      <a href="#join" class="text-sm hover:text-emerald-500 transition-colors">./dolacz</a>
+      <button id="theme-toggle" class="p-2 rounded-lg border border-zinc-300 dark:border-zinc-700 hover:border-emerald-500 dark:hover:border-emerald-500 transition-colors touch-manipulation" aria-label="Przełącz motyw">
+       <svg id="sun-icon" class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+       </svg>
+       <svg id="moon-icon" class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+       </svg>
+      </button>
+     </div>
+     <!-- Mobile Navigation -->
+     <div class="flex sm:hidden items-center gap-3">
+      <button id="theme-toggle-mobile" class="p-2 rounded-lg border border-zinc-300 dark:border-zinc-700 hover:border-emerald-500 dark:hover:border-emerald-500 transition-colors touch-manipulation" aria-label="Przełącz motyw">
+       <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+       </svg>
+       <svg class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+       </svg>
+      </button>
+      <button id="mobile-menu-toggle" class="p-2 rounded-lg border border-zinc-300 dark:border-zinc-700 hover:border-emerald-500 transition-colors touch-manipulation" aria-label="Menu">
+       <svg id="menu-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+       </svg>
+       <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+       </svg>
+      </button>
+     </div>
+    </div>
+    <!-- Mobile Menu Dropdown -->
+    <div id="mobile-menu" class="hidden sm:hidden border-t border-zinc-200 dark:border-zinc-800 bg-stone-50 dark:bg-zinc-950">
+     <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col gap-3">
+      <a href="#events" class="mobile-menu-link px-4 py-3 rounded-lg hover:bg-emerald-500/10 hover:text-emerald-500 transition-colors text-sm font-medium">./wydarzenia</a>
+      <a href="#about" class="mobile-menu-link px-4 py-3 rounded-lg hover:bg-emerald-500/10 hover:text-emerald-500 transition-colors text-sm font-medium">./o-nas</a>
+      <a href="#join" class="mobile-menu-link px-4 py-3 rounded-lg hover:bg-emerald-500/10 hover:text-emerald-500 transition-colors text-sm font-medium">./dolacz</a>
+     </div>
+    </div>
+   </nav><!-- Hero Section -->
+   <section class="min-h-[60vh] sm:min-h-[70vh] flex items-center justify-center px-4 sm:px-6 py-12 sm:py-20">
+    <div class="max-w-4xl mx-auto text-center">
+     <div class="inline-block mb-4 sm:mb-6 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-emerald-500/30 bg-emerald-500/5">
+      <span class="text-emerald-500 text-xs sm:text-sm">● status: aktywny</span>
+     </div>
+     <h1 id="hero-title" class="text-4xl sm:text-5xl md:text-7xl font-bold mb-4 sm:mb-6 tracking-tight leading-tight"><span class="text-emerald-500">&gt;</span> AI_Jam</h1>
+     <p id="hero-tagline" class="text-lg sm:text-xl md:text-2xl text-zinc-600 dark:text-zinc-400 mb-6 sm:mb-8 px-2 leading-relaxed">Tworzymy w Łodzi grupę entuzjastów technologii związanych ze sztuczną inteligencją</p>
+     <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
+      <a href="#join" class="px-6 sm:px-8 py-3 sm:py-4 bg-emerald-500 text-zinc-950 font-semibold rounded-lg hover:bg-emerald-400 active:bg-emerald-600 transition-colors touch-manipulation text-sm sm:text-base"> $ dolacz --teraz </a> <a href="#events" class="px-6 sm:px-8 py-3 sm:py-4 border border-zinc-300 dark:border-zinc-700 rounded-lg hover:border-emerald-500 active:border-emerald-600 transition-colors touch-manipulation text-sm sm:text-base"> $ zobacz --wydarzenia </a>
+     </div>
+    </div>
+   </section><!-- Stats Bar -->
+   <section class="border-y border-zinc-200 dark:border-zinc-800 bg-white/50 dark:bg-zinc-900/50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-8 grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-8 text-center">
+     <div>
+      <div class="text-3xl sm:text-4xl font-bold text-emerald-500">
+       30+
+      </div>
+      <div class="text-xs sm:text-sm text-zinc-500">
+       uczestników
+      </div>
+     </div>
+     <div>
+      <div class="text-3xl sm:text-4xl font-bold text-emerald-500">
+       22
+      </div>
+      <div class="text-xs sm:text-sm text-zinc-500">
+       wydarzenia
+      </div>
+     </div>
+     <div>
+      <div class="text-3xl sm:text-4xl font-bold text-emerald-500">
+       ∞
+      </div>
+      <div class="text-xs sm:text-sm text-zinc-500">
+       pomysłów
+      </div>
+     </div>
+    </div>
+   </section><!-- Events Section -->
+   <section id="events" class="py-12 sm:py-20 px-4 sm:px-6">
+    <div class="max-w-6xl mx-auto">
+     <div class="flex items-center gap-2 sm:gap-3 mb-8 sm:mb-12">
+      <span class="text-emerald-500 text-xl sm:text-2xl">//</span>
+      <h2 class="text-2xl sm:text-3xl font-bold">nadchodzace_wydarzenia</h2>
+     </div>
+     <div class="grid md:grid-cols-2 gap-6">
+      <!-- Event Card 1 -->
+      <div class="group p-4 sm:p-6 border border-zinc-200 dark:border-zinc-800 rounded-xl bg-white dark:bg-zinc-900 hover:border-emerald-500 active:border-emerald-600 transition-all duration-300 touch-manipulation">
+       <div class="flex items-start justify-between mb-3 sm:mb-4 gap-2">
+        <span class="px-2 sm:px-3 py-1 text-xs font-medium bg-emerald-500/10 text-emerald-500 rounded-full whitespace-nowrap">warsztat</span> <span id="event-1-date" class="text-xs sm:text-sm text-zinc-500 font-mono">2024.02.15</span>
+       </div>
+       <h3 id="event-1-title" class="text-lg sm:text-xl font-bold mb-2 sm:mb-3 group-hover:text-emerald-500 transition-colors">Dogłębne Fine-Tuning LLM</h3>
+       <p class="text-zinc-600 dark:text-zinc-400 text-sm mb-3 sm:mb-4 leading-relaxed">Praktyczna sesja eksplorująca trenowanie niestandardowych modeli z technikami LoRA i QLoRA.</p>
+       <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-xs sm:text-sm text-zinc-500">
+        <span class="flex items-center gap-1">
+         <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+         </svg> <span class="truncate">TechHub Co-working</span> </span> <span class="flex items-center gap-1">
+         <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+         </svg> 18:30 </span>
+       </div>
+      </div><!-- Event Card 2 -->
+      <div class="group p-4 sm:p-6 border border-zinc-200 dark:border-zinc-800 rounded-xl bg-white dark:bg-zinc-900 hover:border-emerald-500 active:border-emerald-600 transition-all duration-300 touch-manipulation">
+       <div class="flex items-start justify-between mb-3 sm:mb-4 gap-2">
+        <span class="px-2 sm:px-3 py-1 text-xs font-medium bg-cyan-500/10 text-cyan-500 rounded-full whitespace-nowrap">noc_demo</span> <span id="event-2-date" class="text-xs sm:text-sm text-zinc-500 font-mono">2024.02.28</span>
+       </div>
+       <h3 id="event-2-title" class="text-lg sm:text-xl font-bold mb-2 sm:mb-3 group-hover:text-emerald-500 transition-colors">Pokaz Agentów AI</h3>
+       <p class="text-zinc-600 dark:text-zinc-400 text-sm mb-3 sm:mb-4 leading-relaxed">Członkowie prezentują swoje projekty autonomicznych agentów. Pizza i napoje zapewnione.</p>
+       <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-xs sm:text-sm text-zinc-500">
+        <span class="flex items-center gap-1">
+         <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+         </svg> <span class="truncate">Centrum Innowacji</span> </span> <span class="flex items-center gap-1">
+         <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+         </svg> 19:00 </span>
+       </div>
+      </div>
+     </div>
+     <div class="mt-6 sm:mt-8 text-center">
+      <button class="px-5 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-sm border border-zinc-300 dark:border-zinc-700 rounded-lg hover:border-emerald-500 active:border-emerald-600 transition-colors touch-manipulation"> $ zaladuj --wiecej-wydarzen </button>
+     </div>
+    </div>
+   </section><!-- About Section -->
+   <section id="about" class="py-12 sm:py-20 px-4 sm:px-6 bg-zinc-100/50 dark:bg-zinc-900/50">
+    <div class="max-w-6xl mx-auto">
+     <div class="flex items-center gap-2 sm:gap-3 mb-8 sm:mb-12">
+      <span class="text-emerald-500 text-xl sm:text-2xl">//</span>
+      <h2 class="text-2xl sm:text-3xl font-bold">o_nas</h2>
+     </div>
+     <div class="grid md:grid-cols-2 gap-8 sm:gap-12 items-center">
+      <div>
+       <p id="about-description" class="text-base sm:text-lg text-zinc-600 dark:text-zinc-400 mb-5 sm:mb-6 leading-relaxed">Jesteśmy grupą ciekawskich ludzi z Łodzi i okolic, którzy kwestionują technologiczny hype i szukają wartości w mnogości dostępnych narzędzi i technologii.</p>
+       <div class="space-y-3 sm:space-y-4">
+        <div class="flex items-center gap-2 sm:gap-3">
+         <span class="text-emerald-500 flex-shrink-0">✓</span> <span class="text-sm sm:text-base">Regularne spotkania bogate w praktykę</span>
+        </div>
+        <div class="flex items-center gap-2 sm:gap-3">
+         <span class="text-emerald-500 flex-shrink-0">✓</span> <span class="text-sm sm:text-base">Interesujące projekty i eksperymenty</span>
+        </div>
+        <div class="flex items-center gap-2 sm:gap-3">
+         <span class="text-emerald-500 flex-shrink-0">✓</span> <span class="text-sm sm:text-base">Oddolne prezentacje i dyskusje</span>
+        </div>
+        <div class="flex items-center gap-2 sm:gap-3">
+         <span class="text-emerald-500 flex-shrink-0">✓</span> <span class="text-sm sm:text-base">Dzielenie się wiedzą</span>
+        </div>
+       </div>
+      </div>
+      <div class="p-4 sm:p-6 border border-zinc-200 dark:border-zinc-800 rounded-xl bg-white dark:bg-zinc-900 font-mono text-xs sm:text-sm">
+       <div class="flex items-center gap-1.5 sm:gap-2 mb-3 sm:mb-4 text-zinc-500">
+        <span class="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-red-500"></span> <span class="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-yellow-500"></span> <span class="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-green-500"></span> <span class="ml-1 sm:ml-2 text-xs sm:text-sm">terminal</span>
+       </div>
+       <pre class="text-zinc-600 dark:text-zinc-400 overflow-x-auto"><code><span class="text-emerald-500">$</span> cat tematy.txt
+
+<span class="text-cyan-500">├──</span> duze_modele_jezykowe
+<span class="text-cyan-500">├──</span> computer_vision 
+<span class="text-cyan-500">├──</span> narzedzia_agentowe
+<span class="text-cyan-500">├──</span> inzynieria_promptow
+<span class="text-cyan-500">├──</span> context_engineering
+<span class="text-cyan-500">├──</span> modele_open_source
+<span class="text-cyan-500">└──</span> etyczna_ai
+
+<span class="text-emerald-500">$</span> <span class="cursor-blink"></span></code></pre>
+      </div>
+     </div>
+    </div>
+   </section><!-- Join Section -->
+   <section id="join" class="py-12 sm:py-20 px-4 sm:px-6">
+    <div class="max-w-2xl mx-auto text-center">
+     <div class="flex items-center justify-center gap-2 sm:gap-3 mb-6 sm:mb-8">
+      <span class="text-emerald-500 text-xl sm:text-2xl">//</span>
+      <h2 class="text-2xl sm:text-3xl font-bold">dolacz_do_nas</h2>
+     </div>
+     <p class="text-zinc-600 dark:text-zinc-400 mb-6 sm:mb-8 text-sm sm:text-base px-4">Zostaw swój email, a będziemy informować Cię o nadchodzących wydarzeniach i dyskusjach.</p>
+     <form id="join-form" class="flex flex-col sm:flex-row gap-3 sm:gap-4 max-w-md mx-auto px-4">
+      <input type="email" id="email-input" placeholder="twoj@email.pl" class="flex-1 px-4 py-3 rounded-lg border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-900 focus:border-emerald-500 focus:outline-none transition-colors font-mono text-sm sm:text-base touch-manipulation" required> <button type="submit" class="px-6 py-3 bg-emerald-500 text-zinc-950 font-semibold rounded-lg hover:bg-emerald-400 active:bg-emerald-600 transition-colors whitespace-nowrap touch-manipulation text-sm sm:text-base"> $ subskrybuj </button>
+     </form>
+     <p id="form-message" class="mt-3 sm:mt-4 text-xs sm:text-sm text-emerald-500 hidden px-4"></p>
+     <div class="mt-8 sm:mt-12 flex justify-center gap-4 sm:gap-6">
+      <a href="#" class="p-2.5 sm:p-3 border border-zinc-300 dark:border-zinc-700 rounded-lg hover:border-emerald-500 active:border-emerald-600 transition-colors touch-manipulation" aria-label="LinkedIn">
+       <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewbox="0 0 24 24">
+        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+       </svg></a> <a href="#" class="p-2.5 sm:p-3 border border-zinc-300 dark:border-zinc-700 rounded-lg hover:border-emerald-500 active:border-emerald-600 transition-colors touch-manipulation" aria-label="GitHub">
+       <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewbox="0 0 24 24">
+        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+       </svg></a>
+     </div>
+    </div>
+   </section><!-- Footer -->
+   <footer class="border-t border-zinc-200 dark:border-zinc-800 py-6 sm:py-8 px-4 sm:px-6">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3 sm:gap-4 text-xs sm:text-sm text-zinc-500">
+     <div class="flex items-center gap-2">
+      <span class="text-emerald-500">❯</span> <span id="copyright-year">AI_JAM © 2024</span>
+     </div>
+     <div class="font-mono">
+      <span class="text-emerald-500">$</span> echo "wygenerowane_od_❤️_dzięki_☕"
+     </div>
+    </div>
+   </footer>
+  </div>
+  <script>
+    const defaultConfig = {
+      meetup_name: 'AI_JAM',
+      tagline: 'Lokalni entuzjaści technologii eksperymentujący z najnowocześniejszą AI',
+      event_1_title: 'Dogłębne Fine-Tuning LLM',
+      event_1_date: '2024.02.15',
+      event_2_title: 'Pokaz Agentów AI',
+      event_2_date: '2024.02.28',
+      about_text: "Jesteśmy grupą ciekawskich ludzi z Łodzi i okolic, którzy kwestionują technologiczny hype i szukają wartości w mnogości dostępnych narzędzi i technologii.",
+      background_color: '#fafaf9',
+      surface_color: '#ffffff',
+      text_color: '#18181b',
+      accent_color: '#10b981',
+      border_color: '#e4e4e7',
+      font_family: 'JetBrains Mono',
+      font_size: 16
+    };
+
+    // Theme toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+    const html = document.documentElement;
+    
+    // Check for saved theme preference or default to system preference
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      html.classList.add('dark');
+    }
+    
+    const toggleTheme = () => {
+      html.classList.toggle('dark');
+      localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+    };
+    
+    themeToggle.addEventListener('click', toggleTheme);
+    themeToggleMobile.addEventListener('click', toggleTheme);
+
+    // Mobile menu toggle
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    
+    mobileMenuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      menuIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+    });
+    
+    // Close mobile menu when clicking a link
+    document.querySelectorAll('.mobile-menu-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+      });
+    });
+
+    // Form handling
+    const joinForm = document.getElementById('join-form');
+    const formMessage = document.getElementById('form-message');
+    
+    joinForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = document.getElementById('email-input').value;
+      formMessage.textContent = `✓ ${email} dodany do listy. Witamy na pokładzie!`;
+      formMessage.classList.remove('hidden');
+      joinForm.reset();
+      setTimeout(() => formMessage.classList.add('hidden'), 5000);
+    });
+
+    // Update copyright year
+    document.getElementById('copyright-year').textContent = `AI_JAM © ${new Date().getFullYear()}`;
+
+    // Element SDK initialization
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange: async (config) => {
+          document.getElementById('hero-title').innerHTML = `<span class="text-emerald-500">&gt;</span> ${config.meetup_name || defaultConfig.meetup_name}`;
+          document.getElementById('hero-tagline').textContent = config.tagline || defaultConfig.tagline;
+          document.getElementById('event-1-title').textContent = config.event_1_title || defaultConfig.event_1_title;
+          document.getElementById('event-1-date').textContent = config.event_1_date || defaultConfig.event_1_date;
+          document.getElementById('event-2-title').textContent = config.event_2_title || defaultConfig.event_2_title;
+          document.getElementById('event-2-date').textContent = config.event_2_date || defaultConfig.event_2_date;
+          document.getElementById('about-description').textContent = config.about_text || defaultConfig.about_text;
+          
+          // Apply font
+          const fontFamily = config.font_family || defaultConfig.font_family;
+          document.body.style.fontFamily = `${fontFamily}, monospace`;
+          
+          // Apply font size scaling
+          const baseSize = config.font_size || defaultConfig.font_size;
+          document.documentElement.style.fontSize = `${baseSize}px`;
+        },
+        mapToCapabilities: (config) => ({
+          recolorables: [
+            {
+              get: () => config.accent_color || defaultConfig.accent_color,
+              set: (value) => {
+                config.accent_color = value;
+                window.elementSdk.setConfig({ accent_color: value });
+              }
+            }
+          ],
+          borderables: [],
+          fontEditable: {
+            get: () => config.font_family || defaultConfig.font_family,
+            set: (value) => {
+              config.font_family = value;
+              window.elementSdk.setConfig({ font_family: value });
+            }
+          },
+          fontSizeable: {
+            get: () => config.font_size || defaultConfig.font_size,
+            set: (value) => {
+              config.font_size = value;
+              window.elementSdk.setConfig({ font_size: value });
+            }
+          }
+        }),
+        mapToEditPanelValues: (config) => new Map([
+          ['meetup_name', config.meetup_name || defaultConfig.meetup_name],
+          ['tagline', config.tagline || defaultConfig.tagline],
+          ['event_1_title', config.event_1_title || defaultConfig.event_1_title],
+          ['event_1_date', config.event_1_date || defaultConfig.event_1_date],
+          ['event_2_title', config.event_2_title || defaultConfig.event_2_title],
+          ['event_2_date', config.event_2_date || defaultConfig.event_2_date],
+          ['about_text', config.about_text || defaultConfig.about_text]
+        ])
+      });
+    }
+  </script>
+</html>

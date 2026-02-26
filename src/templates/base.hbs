@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="pl" class="h-full">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{title}}</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            mono: ['JetBrains Mono', 'monospace'],
+            sans: ['Space Grotesk', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="h-full bg-stone-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-mono transition-colors duration-300">
+  <div id="app" class="h-full w-full overflow-auto grid-bg">
+    <div class="scanline text-emerald-500"></div>
+    
+    {{> nav}}
+    
+    {{{content}}}
+    
+    {{> footer}}
+  </div>
+  
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>

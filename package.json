@@ -1,41 +1,21 @@
 {
-  "name": "aijam-lodz",
-  "version": "0.1.0",
-  "private": true,
+  "name": "aijam.pl",
+  "version": "1.0.0",
+  "description": "Static site generator for AI Jam meetup website",
+  "main": "build.js",
   "scripts": {
-    "dev": "next dev",
-    "build": "prisma generate && next build",
-    "start": "next start",
-    "lint": "next lint",
-    "db:push": "prisma db push",
-    "db:seed": "tsx prisma/seed.ts",
-    "db:studio": "prisma studio",
-    "prisma:generate": "prisma generate"
+    "build": "node build.js",
+    "dev": "node build.js && python3 -m http.server 8000 --directory dist",
+    "clean": "rm -rf dist"
   },
-  "prisma": {
-    "seed": "tsx prisma/seed.ts"
-  },
+  "keywords": ["static-site", "generator", "meetup"],
+  "author": "",
+  "license": "MIT",
   "dependencies": {
-    "@prisma/client": "^6.19.0",
-    "lucide-react": "^0.400.0",
-    "next": "^14.2.0",
-    "next-intl": "^3.15.0",
-    "qrcode.react": "^4.0.1",
-    "react": "^18.3.0",
-    "react-dom": "^18.3.0",
-    "react-markdown": "^9.0.1"
-  },
-  "devDependencies": {
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "autoprefixer": "^10.0.1",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.0",
-    "postcss": "^8",
-    "prisma": "^6.19.0",
-    "tailwindcss": "^3.4.1",
-    "tsx": "^4.20.6",
-    "typescript": "^5"
+    "handlebars": "^4.7.8",
+    "markdown-it": "^14.0.0",
+    "gray-matter": "^4.0.3",
+    "html-minifier": "^4.0.0",
+    "fs-extra": "^11.2.0"
   }
 }
