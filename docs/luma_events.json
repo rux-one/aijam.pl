@@ -1,0 +1,2316 @@
+{
+  "entries": [
+    {
+      "api_id": "calev-UbVXvt10MGVxEgZ",
+      "event": {
+        "api_id": "evt-dKM6eXU21HsIcbx",
+        "calendar_api_id": "cal-LgZzH80VBHWnNQy",
+        "cover_url": "https://images.lumacdn.com/event-covers/4o/4fb244fe-4bd9-47fa-8af5-c438f5b3f9b4.png",
+        "end_at": "2026-03-05T20:00:00.000Z",
+        "event_type": "independent",
+        "hide_rsvp": false,
+        "location_type": "offline",
+        "name": "AI Jam Łódź #23",
+        "one_to_one": true,
+        "recurrence_id": null,
+        "show_guest_list": true,
+        "start_at": "2026-03-05T17:30:00.000Z",
+        "timezone": "Europe/Warsaw",
+        "url": "qj4qseuc",
+        "user_api_id": "usr-1AnhLjq1U8joBen",
+        "visibility": "public",
+        "virtual_info": {
+          "has_access": false
+        },
+        "geo_address_info": {
+          "city": "Łódź",
+          "type": "google",
+          "region": "Województwo łódzkie",
+          "address": "Get Software Done",
+          "country": "Poland",
+          "place_id": "ChIJd6sDAfTKG0cR2MNU-dfzwRQ",
+          "localized": {
+            "pl": {
+              "city": "Łódź",
+              "region": "Województwo łódzkie",
+              "address": "Get Software Done",
+              "country": "Polska",
+              "city_state": "Łódź, Województwo łódzkie",
+              "sublocality": "Wydawnicza Park",
+              "full_address": "Get Software Done, Wydawnicza 1/3C, 92-333 Łódź, Polska",
+              "short_address": "Wydawnicza 1/3C, Łódź"
+            }
+          },
+          "city_state": "Łódź, Województwo łódzkie",
+          "description": "na teren prowadzą dwie bramy, jest parking, pierwsze piętro, wejście od lewej",
+          "sublocality": "Wydawnicza Park",
+          "country_code": "PL",
+          "full_address": "Get Software Done, Wydawnicza 1/3C, 92-333 Łódź, Poland",
+          "short_address": "Wydawnicza 1/3C, Łódź",
+          "apple_maps_place_id": null,
+          "mode": "shown"
+        },
+        "geo_address_visibility": "public",
+        "coordinate": {
+          "longitude": 19.489669000000003,
+          "latitude": 51.7645827
+        },
+        "waitlist_enabled": true,
+        "waitlist_status": "enabled"
+      },
+      "cover_image": {
+        "colors": [
+          "#0e0b18",
+          "#5f184b",
+          "#0b406b",
+          "#f29545"
+        ],
+        "palette": {
+          "neutral": [
+            {
+              "color": "#0f0b18",
+              "percentage": 44.73
+            },
+            {
+              "color": "#1b214b",
+              "percentage": 6.56
+            }
+          ],
+          "vibrant": [
+            {
+              "color": "#0b406b",
+              "percentage": 9.05
+            },
+            {
+              "color": "#bb4382",
+              "percentage": 1.68
+            },
+            {
+              "color": "#e6924a",
+              "percentage": 1.59
+            }
+          ]
+        }
+      },
+      "calendar": {
+        "access_level": "public",
+        "api_id": "cal-LgZzH80VBHWnNQy",
+        "avatar_url": "https://cdn.lu.ma/avatars-default/community_avatar_21.png",
+        "coordinate": {
+          "longitude": 19.4558778,
+          "latitude": 51.7592924
+        },
+        "cover_image_url": "https://images.lumacdn.com/calendar-cover-images/0q/fdf857ad-8f6b-488f-b7c9-8fe7ded81ff8.png",
+        "description_short": "",
+        "event_submission_restriction": "open",
+        "geo_city": "Łódź",
+        "geo_country": "Poland",
+        "geo_region": "Łódź Voivodeship",
+        "google_measurement_id": null,
+        "instagram_handle": null,
+        "is_blocked": false,
+        "launch_status": "launched",
+        "linkedin_handle": null,
+        "luma_plus_active": false,
+        "meta_pixel_id": null,
+        "name": "AI Jam Łódź",
+        "personal_user_api_id": null,
+        "refund_policy": null,
+        "slug": "aijam",
+        "social_image_url": "https://images.lumacdn.com/calendar-cover-images/04/04adbb2b-1661-4780-b1ae-f133b4a12680.png",
+        "stripe_account_id": null,
+        "tax_config": null,
+        "tiktok_handle": null,
+        "timezone": "Europe/Warsaw",
+        "tint_color": "#AB46DD",
+        "track_meta_ads_from_luma": false,
+        "twitter_handle": null,
+        "verified_at": null,
+        "website": null,
+        "youtube_handle": null,
+        "is_personal": false,
+        "personal_user": null
+      },
+      "start_at": "2026-02-19T17:30:00.000Z",
+      "hosts": [
+        {
+          "name": "Bartłomiej Karalus",
+          "api_id": "usr-1AnhLjq1U8joBen",
+          "website": "https://rux.one",
+          "timezone": "Europe/Warsaw",
+          "username": "rux1",
+          "bio_short": "beep boop",
+          "avatar_url": "https://images.lumacdn.com/avatars/w9/51a9fbc6-cce6-4605-a8b0-15e7d96a683a.jpg",
+          "is_verified": false,
+          "tiktok_handle": null,
+          "last_online_at": "2026-02-26T12:28:49.411Z",
+          "twitter_handle": null,
+          "youtube_handle": "",
+          "linkedin_handle": "/in/bart-karalus",
+          "instagram_handle": null
+        }
+      ],
+      "guest_count": 6,
+      "ticket_count": 6,
+      "ticket_info": {
+        "price": null,
+        "is_free": true,
+        "max_price": null,
+        "is_sold_out": false,
+        "spots_remaining": 14,
+        "is_near_capacity": false,
+        "require_approval": false,
+        "currency_info": null
+      },
+      "featured_guests": [],
+      "role": null,
+      "manage_access": null,
+      "waitlist_active": false,
+      "featured_city": null,
+      "calendar_api_id": "cal-LgZzH80VBHWnNQy",
+      "is_manager": true,
+      "platform": "luma",
+      "status": "approved",
+      "submitted_by_user_api_id": "usr-1AnhLjq1U8joBen",
+      "tags": []
+    },
+    {
+      "api_id": "calev-UbVXvt10MGVxEgZ",
+      "event": {
+        "api_id": "evt-dKM6eXU21HsIcbx",
+        "calendar_api_id": "cal-LgZzH80VBHWnNQy",
+        "cover_url": "https://images.lumacdn.com/event-covers/4o/4fb244fe-4bd9-47fa-8af5-c438f5b3f9b4.png",
+        "end_at": "2026-02-19T20:00:00.000Z",
+        "event_type": "independent",
+        "hide_rsvp": false,
+        "location_type": "offline",
+        "name": "AI Jam Łódź #22",
+        "one_to_one": true,
+        "recurrence_id": null,
+        "show_guest_list": true,
+        "start_at": "2026-02-19T17:30:00.000Z",
+        "timezone": "Europe/Warsaw",
+        "url": "qj4qseuc",
+        "user_api_id": "usr-1AnhLjq1U8joBen",
+        "visibility": "public",
+        "virtual_info": {
+          "has_access": false
+        },
+        "geo_address_info": {
+          "city": "Łódź",
+          "type": "google",
+          "region": "Województwo łódzkie",
+          "address": "Get Software Done",
+          "country": "Poland",
+          "place_id": "ChIJd6sDAfTKG0cR2MNU-dfzwRQ",
+          "localized": {
+            "pl": {
+              "city": "Łódź",
+              "region": "Województwo łódzkie",
+              "address": "Get Software Done",
+              "country": "Polska",
+              "city_state": "Łódź, Województwo łódzkie",
+              "sublocality": "Wydawnicza Park",
+              "full_address": "Get Software Done, Wydawnicza 1/3C, 92-333 Łódź, Polska",
+              "short_address": "Wydawnicza 1/3C, Łódź"
+            }
+          },
+          "city_state": "Łódź, Województwo łódzkie",
+          "description": "na teren prowadzą dwie bramy, jest parking, pierwsze piętro, wejście od lewej",
+          "sublocality": "Wydawnicza Park",
+          "country_code": "PL",
+          "full_address": "Get Software Done, Wydawnicza 1/3C, 92-333 Łódź, Poland",
+          "short_address": "Wydawnicza 1/3C, Łódź",
+          "apple_maps_place_id": null,
+          "mode": "shown"
+        },
+        "geo_address_visibility": "public",
+        "coordinate": {
+          "longitude": 19.489669000000003,
+          "latitude": 51.7645827
+        },
+        "waitlist_enabled": true,
+        "waitlist_status": "enabled"
+      },
+      "cover_image": {
+        "colors": [
+          "#0e0b18",
+          "#5f184b",
+          "#0b406b",
+          "#f29545"
+        ],
+        "palette": {
+          "neutral": [
+            {
+              "color": "#0f0b18",
+              "percentage": 44.73
+            },
+            {
+              "color": "#1b214b",
+              "percentage": 6.56
+            }
+          ],
+          "vibrant": [
+            {
+              "color": "#0b406b",
+              "percentage": 9.05
+            },
+            {
+              "color": "#bb4382",
+              "percentage": 1.68
+            },
+            {
+              "color": "#e6924a",
+              "percentage": 1.59
+            }
+          ]
+        }
+      },
+      "calendar": {
+        "access_level": "public",
+        "api_id": "cal-LgZzH80VBHWnNQy",
+        "avatar_url": "https://cdn.lu.ma/avatars-default/community_avatar_21.png",
+        "coordinate": {
+          "longitude": 19.4558778,
+          "latitude": 51.7592924
+        },
+        "cover_image_url": "https://images.lumacdn.com/calendar-cover-images/0q/fdf857ad-8f6b-488f-b7c9-8fe7ded81ff8.png",
+        "description_short": "",
+        "event_submission_restriction": "open",
+        "geo_city": "Łódź",
+        "geo_country": "Poland",
+        "geo_region": "Łódź Voivodeship",
+        "google_measurement_id": null,
+        "instagram_handle": null,
+        "is_blocked": false,
+        "launch_status": "launched",
+        "linkedin_handle": null,
+        "luma_plus_active": false,
+        "meta_pixel_id": null,
+        "name": "AI Jam Łódź",
+        "personal_user_api_id": null,
+        "refund_policy": null,
+        "slug": "aijam",
+        "social_image_url": "https://images.lumacdn.com/calendar-cover-images/04/04adbb2b-1661-4780-b1ae-f133b4a12680.png",
+        "stripe_account_id": null,
+        "tax_config": null,
+        "tiktok_handle": null,
+        "timezone": "Europe/Warsaw",
+        "tint_color": "#AB46DD",
+        "track_meta_ads_from_luma": false,
+        "twitter_handle": null,
+        "verified_at": null,
+        "website": null,
+        "youtube_handle": null,
+        "is_personal": false,
+        "personal_user": null
+      },
+      "start_at": "2026-02-19T17:30:00.000Z",
+      "hosts": [
+        {
+          "name": "Bartłomiej Karalus",
+          "api_id": "usr-1AnhLjq1U8joBen",
+          "website": "https://rux.one",
+          "timezone": "Europe/Warsaw",
+          "username": "rux1",
+          "bio_short": "beep boop",
+          "avatar_url": "https://images.lumacdn.com/avatars/w9/51a9fbc6-cce6-4605-a8b0-15e7d96a683a.jpg",
+          "is_verified": false,
+          "tiktok_handle": null,
+          "last_online_at": "2026-02-26T12:28:49.411Z",
+          "twitter_handle": null,
+          "youtube_handle": "",
+          "linkedin_handle": "/in/bart-karalus",
+          "instagram_handle": null
+        }
+      ],
+      "guest_count": 6,
+      "ticket_count": 6,
+      "ticket_info": {
+        "price": null,
+        "is_free": true,
+        "max_price": null,
+        "is_sold_out": false,
+        "spots_remaining": 14,
+        "is_near_capacity": false,
+        "require_approval": false,
+        "currency_info": null
+      },
+      "featured_guests": [],
+      "role": null,
+      "manage_access": null,
+      "waitlist_active": false,
+      "featured_city": null,
+      "calendar_api_id": "cal-LgZzH80VBHWnNQy",
+      "is_manager": true,
+      "platform": "luma",
+      "status": "approved",
+      "submitted_by_user_api_id": "usr-1AnhLjq1U8joBen",
+      "tags": []
+    },
+    {
+      "api_id": "calev-XoJOfTGF1vyE1YH",
+      "event": {
+        "api_id": "evt-g6X0mnHxNGs4FaF",
+        "calendar_api_id": "cal-LgZzH80VBHWnNQy",
+        "cover_url": "https://images.lumacdn.com/event-covers/4o/4fb244fe-4bd9-47fa-8af5-c438f5b3f9b4.png",
+        "end_at": "2026-02-05T20:00:00.000Z",
+        "event_type": "independent",
+        "hide_rsvp": false,
+        "location_type": "offline",
+        "name": "AI Jam Łódź #21",
+        "one_to_one": true,
+        "recurrence_id": null,
+        "show_guest_list": true,
+        "start_at": "2026-02-05T17:30:00.000Z",
+        "timezone": "Europe/Warsaw",
+        "url": "uu26b67z",
+        "user_api_id": "usr-1AnhLjq1U8joBen",
+        "visibility": "public",
+        "virtual_info": {
+          "has_access": false
+        },
+        "geo_address_info": {
+          "city": "Łódź",
+          "type": "google",
+          "region": "Województwo łódzkie",
+          "address": "Get Software Done",
+          "country": "Poland",
+          "place_id": "ChIJd6sDAfTKG0cR2MNU-dfzwRQ",
+          "localized": {
+            "pl": {
+              "city": "Łódź",
+              "region": "Województwo łódzkie",
+              "address": "Get Software Done",
+              "country": "Polska",
+              "city_state": "Łódź, Województwo łódzkie",
+              "sublocality": "Wydawnicza Park",
+              "full_address": "Get Software Done, Wydawnicza 1/3C, 92-333 Łódź, Polska",
+              "short_address": "Wydawnicza 1/3C, Łódź"
+            }
+          },
+          "city_state": "Łódź, Województwo łódzkie",
+          "description": "na teren prowadzą dwie bramy, jest parking, pierwsze piętro, wejście od lewej",
+          "sublocality": "Wydawnicza Park",
+          "country_code": "PL",
+          "full_address": "Get Software Done, Wydawnicza 1/3C, 92-333 Łódź, Poland",
+          "short_address": "Wydawnicza 1/3C, Łódź",
+          "apple_maps_place_id": null,
+          "mode": "shown"
+        },
+        "geo_address_visibility": "public",
+        "coordinate": {
+          "longitude": 19.489669000000003,
+          "latitude": 51.7645827
+        },
+        "waitlist_enabled": true,
+        "waitlist_status": "enabled"
+      },
+      "cover_image": {
+        "colors": [
+          "#0e0b18",
+          "#5f184b",
+          "#0b406b",
+          "#f29545"
+        ],
+        "palette": {
+          "neutral": [
+            {
+              "color": "#0f0b18",
+              "percentage": 44.73
+            },
+            {
+              "color": "#1b214b",
+              "percentage": 6.56
+            }
+          ],
+          "vibrant": [
+            {
+              "color": "#0b406b",
+              "percentage": 9.05
+            },
+            {
+              "color": "#bb4382",
+              "percentage": 1.68
+            },
+            {
+              "color": "#e6924a",
+              "percentage": 1.59
+            }
+          ]
+        }
+      },
+      "calendar": {
+        "access_level": "public",
+        "api_id": "cal-LgZzH80VBHWnNQy",
+        "avatar_url": "https://cdn.lu.ma/avatars-default/community_avatar_21.png",
+        "coordinate": {
+          "longitude": 19.4558778,
+          "latitude": 51.7592924
+        },
+        "cover_image_url": "https://images.lumacdn.com/calendar-cover-images/0q/fdf857ad-8f6b-488f-b7c9-8fe7ded81ff8.png",
+        "description_short": "",
+        "event_submission_restriction": "open",
+        "geo_city": "Łódź",
+        "geo_country": "Poland",
+        "geo_region": "Łódź Voivodeship",
+        "google_measurement_id": null,
+        "instagram_handle": null,
+        "is_blocked": false,
+        "launch_status": "launched",
+        "linkedin_handle": null,
+        "luma_plus_active": false,
+        "meta_pixel_id": null,
+        "name": "AI Jam Łódź",
+        "personal_user_api_id": null,
+        "refund_policy": null,
+        "slug": "aijam",
+        "social_image_url": "https://images.lumacdn.com/calendar-cover-images/04/04adbb2b-1661-4780-b1ae-f133b4a12680.png",
+        "stripe_account_id": null,
+        "tax_config": null,
+        "tiktok_handle": null,
+        "timezone": "Europe/Warsaw",
+        "tint_color": "#AB46DD",
+        "track_meta_ads_from_luma": false,
+        "twitter_handle": null,
+        "verified_at": null,
+        "website": null,
+        "youtube_handle": null,
+        "is_personal": false,
+        "personal_user": null
+      },
+      "start_at": "2026-02-05T17:30:00.000Z",
+      "hosts": [
+        {
+          "name": "Bartłomiej Karalus",
+          "api_id": "usr-1AnhLjq1U8joBen",
+          "website": "https://rux.one",
+          "timezone": "Europe/Warsaw",
+          "username": "rux1",
+          "bio_short": "beep boop",
+          "avatar_url": "https://images.lumacdn.com/avatars/w9/51a9fbc6-cce6-4605-a8b0-15e7d96a683a.jpg",
+          "is_verified": false,
+          "tiktok_handle": null,
+          "last_online_at": "2026-02-26T12:28:49.411Z",
+          "twitter_handle": null,
+          "youtube_handle": "",
+          "linkedin_handle": "/in/bart-karalus",
+          "instagram_handle": null
+        }
+      ],
+      "guest_count": 10,
+      "ticket_count": 10,
+      "ticket_info": {
+        "price": null,
+        "is_free": true,
+        "max_price": null,
+        "is_sold_out": false,
+        "spots_remaining": 10,
+        "is_near_capacity": false,
+        "require_approval": false,
+        "currency_info": null
+      },
+      "featured_guests": [
+        {
+          "api_id": "usr-GpLer5Oxl6b6Qb8",
+          "avatar_url": "https://images.lumacdn.com/avatars/z8/77f55d0b-4f31-4f5d-b239-d02a5424f496.png",
+          "bio_short": null,
+          "instagram_handle": null,
+          "is_verified": false,
+          "last_online_at": "2026-02-25T09:08:04.141Z",
+          "linkedin_handle": null,
+          "name": "Tomasz",
+          "tiktok_handle": null,
+          "timezone": "Europe/Warsaw",
+          "twitter_handle": null,
+          "username": null,
+          "website": null,
+          "youtube_handle": null
+        },
+        {
+          "api_id": "usr-1AnhLjq1U8joBen",
+          "avatar_url": "https://images.lumacdn.com/avatars/w9/51a9fbc6-cce6-4605-a8b0-15e7d96a683a.jpg",
+          "bio_short": "beep boop",
+          "instagram_handle": null,
+          "is_verified": false,
+          "last_online_at": "2026-02-26T12:28:49.411Z",
+          "linkedin_handle": "/in/bart-karalus",
+          "name": "Bartłomiej Karalus",
+          "tiktok_handle": null,
+          "timezone": "Europe/Warsaw",
+          "twitter_handle": null,
+          "username": "rux1",
+          "website": "https://rux.one",
+          "youtube_handle": ""
+        },
+        {
+          "api_id": "usr-hI64fGJFoHFfJJY",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_21.png",
+          "bio_short": null,
+          "instagram_handle": null,
+          "is_verified": false,
+          "last_online_at": null,
+          "linkedin_handle": null,
+          "name": "Maciej Ciszek",
+          "tiktok_handle": null,
+          "timezone": "Europe/Warsaw",
+          "twitter_handle": null,
+          "username": null,
+          "website": null,
+          "youtube_handle": null
+        },
+        {
+          "api_id": "usr-qXKvjq6K1qPByTW",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_44.png",
+          "bio_short": null,
+          "instagram_handle": null,
+          "is_verified": false,
+          "last_online_at": null,
+          "linkedin_handle": null,
+          "name": "Rafał Ciupek",
+          "tiktok_handle": null,
+          "timezone": "Europe/Warsaw",
+          "twitter_handle": null,
+          "username": null,
+          "website": null,
+          "youtube_handle": null
+        },
+        {
+          "api_id": "usr-JjWJAVJEFNEOteD",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_39.png",
+          "bio_short": null,
+          "instagram_handle": null,
+          "is_verified": false,
+          "last_online_at": "2026-02-18T20:50:13.436Z",
+          "linkedin_handle": null,
+          "name": "Tadeusz",
+          "tiktok_handle": null,
+          "timezone": "Europe/Warsaw",
+          "twitter_handle": null,
+          "username": null,
+          "website": null,
+          "youtube_handle": null
+        },
+        {
+          "api_id": "usr-gaD4YAqLEFoftIC",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_19.png",
+          "bio_short": null,
+          "instagram_handle": null,
+          "is_verified": false,
+          "last_online_at": "2026-02-04T09:44:14.557Z",
+          "linkedin_handle": null,
+          "name": "Arkadiusz",
+          "tiktok_handle": null,
+          "timezone": "Europe/London",
+          "twitter_handle": null,
+          "username": null,
+          "website": null,
+          "youtube_handle": null
+        },
+        {
+          "api_id": "usr-D1iGxFv4PTCHDso",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_21.png",
+          "bio_short": null,
+          "instagram_handle": null,
+          "is_verified": false,
+          "last_online_at": null,
+          "linkedin_handle": null,
+          "name": "Arkadiusz Grzelka",
+          "tiktok_handle": null,
+          "timezone": "Europe/Warsaw",
+          "twitter_handle": null,
+          "username": null,
+          "website": null,
+          "youtube_handle": null
+        },
+        {
+          "api_id": "usr-YpnkxJd6feyCZLy",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_1.png",
+          "bio_short": null,
+          "instagram_handle": null,
+          "is_verified": false,
+          "last_online_at": "2026-02-24T17:58:46.450Z",
+          "linkedin_handle": "/in/pawellewinski",
+          "name": "Paweł",
+          "tiktok_handle": null,
+          "timezone": "Europe/Warsaw",
+          "twitter_handle": null,
+          "username": null,
+          "website": null,
+          "youtube_handle": null
+        },
+        {
+          "api_id": "usr-KmdVNsRXAQX7sna",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_26.png",
+          "bio_short": null,
+          "instagram_handle": null,
+          "is_verified": false,
+          "last_online_at": "2026-02-20T21:05:02.182Z",
+          "linkedin_handle": null,
+          "name": "Piotr kowalski",
+          "tiktok_handle": null,
+          "timezone": "Europe/Warsaw",
+          "twitter_handle": null,
+          "username": null,
+          "website": null,
+          "youtube_handle": null
+        },
+        {
+          "api_id": "usr-DalF5gKdWbFEp2A",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_30.png",
+          "bio_short": null,
+          "instagram_handle": null,
+          "is_verified": false,
+          "last_online_at": "2026-02-23T13:17:20.192Z",
+          "linkedin_handle": null,
+          "name": "Krzysztof",
+          "tiktok_handle": null,
+          "timezone": "Europe/Warsaw",
+          "twitter_handle": null,
+          "username": null,
+          "website": null,
+          "youtube_handle": null
+        }
+      ],
+      "role": null,
+      "manage_access": null,
+      "waitlist_active": false,
+      "featured_city": null,
+      "calendar_api_id": "cal-LgZzH80VBHWnNQy",
+      "is_manager": true,
+      "platform": "luma",
+      "status": "approved",
+      "submitted_by_user_api_id": "usr-1AnhLjq1U8joBen",
+      "tags": []
+    },
+    {
+      "api_id": "calev-p6GD4wBf4HcF8uB",
+      "event": {
+        "api_id": "evt-aLzUzS2YWxRdDFj",
+        "calendar_api_id": "cal-LgZzH80VBHWnNQy",
+        "cover_url": "https://images.lumacdn.com/event-covers/4o/4fb244fe-4bd9-47fa-8af5-c438f5b3f9b4.png",
+        "end_at": "2026-01-15T20:00:00.000Z",
+        "event_type": "independent",
+        "hide_rsvp": false,
+        "location_type": "offline",
+        "name": "AI Jam Łódź #20",
+        "one_to_one": true,
+        "recurrence_id": null,
+        "show_guest_list": true,
+        "start_at": "2026-01-15T17:30:00.000Z",
+        "timezone": "Europe/Warsaw",
+        "url": "912q8wki",
+        "user_api_id": "usr-1AnhLjq1U8joBen",
+        "visibility": "public",
+        "virtual_info": {
+          "has_access": false
+        },
+        "geo_address_info": {
+          "city": "Łódź",
+          "type": "google",
+          "region": "Województwo łódzkie",
+          "address": "Get Software Done",
+          "country": "Poland",
+          "place_id": "ChIJd6sDAfTKG0cR2MNU-dfzwRQ",
+          "localized": {
+            "pl": {
+              "city": "Łódź",
+              "region": "Województwo łódzkie",
+              "address": "Get Software Done",
+              "country": "Polska",
+              "city_state": "Łódź, Województwo łódzkie",
+              "sublocality": "Wydawnicza Park",
+              "full_address": "Get Software Done, Wydawnicza 1/3C, 92-333 Łódź, Polska",
+              "short_address": "Wydawnicza 1/3C, Łódź"
+            }
+          },
+          "city_state": "Łódź, Województwo łódzkie",
+          "description": "na teren prowadzą dwie bramy, jest parking, pierwsze piętro, wejście od lewej",
+          "sublocality": "Wydawnicza Park",
+          "country_code": "PL",
+          "full_address": "Get Software Done, Wydawnicza 1/3C, 92-333 Łódź, Poland",
+          "short_address": "Wydawnicza 1/3C, Łódź",
+          "apple_maps_place_id": null,
+          "mode": "shown"
+        },
+        "geo_address_visibility": "public",
+        "coordinate": {
+          "longitude": 19.489669000000003,
+          "latitude": 51.7645827
+        },
+        "waitlist_enabled": true,
+        "waitlist_status": "enabled"
+      },
+      "cover_image": {
+        "colors": [
+          "#0e0b18",
+          "#5f184b",
+          "#0b406b",
+          "#f29545"
+        ],
+        "palette": {
+          "neutral": [
+            {
+              "color": "#0f0b18",
+              "percentage": 44.73
+            },
+            {
+              "color": "#1b214b",
+              "percentage": 6.56
+            }
+          ],
+          "vibrant": [
+            {
+              "color": "#0b406b",
+              "percentage": 9.05
+            },
+            {
+              "color": "#bb4382",
+              "percentage": 1.68
+            },
+            {
+              "color": "#e6924a",
+              "percentage": 1.59
+            }
+          ]
+        }
+      },
+      "calendar": {
+        "access_level": "public",
+        "api_id": "cal-LgZzH80VBHWnNQy",
+        "avatar_url": "https://cdn.lu.ma/avatars-default/community_avatar_21.png",
+        "coordinate": {
+          "longitude": 19.4558778,
+          "latitude": 51.7592924
+        },
+        "cover_image_url": "https://images.lumacdn.com/calendar-cover-images/0q/fdf857ad-8f6b-488f-b7c9-8fe7ded81ff8.png",
+        "description_short": "",
+        "event_submission_restriction": "open",
+        "geo_city": "Łódź",
+        "geo_country": "Poland",
+        "geo_region": "Łódź Voivodeship",
+        "google_measurement_id": null,
+        "instagram_handle": null,
+        "is_blocked": false,
+        "launch_status": "launched",
+        "linkedin_handle": null,
+        "luma_plus_active": false,
+        "meta_pixel_id": null,
+        "name": "AI Jam Łódź",
+        "personal_user_api_id": null,
+        "refund_policy": null,
+        "slug": "aijam",
+        "social_image_url": "https://images.lumacdn.com/calendar-cover-images/04/04adbb2b-1661-4780-b1ae-f133b4a12680.png",
+        "stripe_account_id": null,
+        "tax_config": null,
+        "tiktok_handle": null,
+        "timezone": "Europe/Warsaw",
+        "tint_color": "#AB46DD",
+        "track_meta_ads_from_luma": false,
+        "twitter_handle": null,
+        "verified_at": null,
+        "website": null,
+        "youtube_handle": null,
+        "is_personal": false,
+        "personal_user": null
+      },
+      "start_at": "2026-01-15T17:30:00.000Z",
+      "hosts": [
+        {
+          "name": "Bartłomiej Karalus",
+          "api_id": "usr-1AnhLjq1U8joBen",
+          "website": "https://rux.one",
+          "timezone": "Europe/Warsaw",
+          "username": "rux1",
+          "bio_short": "beep boop",
+          "avatar_url": "https://images.lumacdn.com/avatars/w9/51a9fbc6-cce6-4605-a8b0-15e7d96a683a.jpg",
+          "is_verified": false,
+          "tiktok_handle": null,
+          "last_online_at": "2026-02-26T12:28:49.411Z",
+          "twitter_handle": null,
+          "youtube_handle": "",
+          "linkedin_handle": "/in/bart-karalus",
+          "instagram_handle": null
+        }
+      ],
+      "guest_count": 14,
+      "ticket_count": 14,
+      "ticket_info": {
+        "price": null,
+        "is_free": true,
+        "max_price": null,
+        "is_sold_out": false,
+        "spots_remaining": 6,
+        "is_near_capacity": false,
+        "require_approval": false,
+        "currency_info": null
+      },
+      "featured_guests": [
+        {
+          "api_id": "usr-EEzDhxkY1iIDcWc",
+          "avatar_url": "https://images.lumacdn.com/avatars/ii/4689d2fa-d437-420e-889e-4521115ae1e2.png",
+          "bio_short": "AI Solutions for Small Businesses\nI create custom AI applications that solve real problems for micro and small businesses.",
+          "instagram_handle": null,
+          "is_verified": false,
+          "last_online_at": "2026-02-17T03:52:40.719Z",
+          "linkedin_handle": "/in/marcinmove37th",
+          "name": "Marcin Lisiak",
+          "tiktok_handle": null,
+          "timezone": "Europe/Warsaw",
+          "twitter_handle": null,
+          "username": "move37th",
+          "website": null,
+          "youtube_handle": ""
+        },
+        {
+          "api_id": "usr-GpLer5Oxl6b6Qb8",
+          "avatar_url": "https://images.lumacdn.com/avatars/z8/77f55d0b-4f31-4f5d-b239-d02a5424f496.png",
+          "bio_short": null,
+          "instagram_handle": null,
+          "is_verified": false,
+          "last_online_at": "2026-02-25T09:08:04.141Z",
+          "linkedin_handle": null,
+          "name": "Tomasz",
+          "tiktok_handle": null,
+          "timezone": "Europe/Warsaw",
+          "twitter_handle": null,
+          "username": null,
+          "website": null,
+          "youtube_handle": null
+        },
+        {
+          "api_id": "usr-1AnhLjq1U8joBen",
+          "avatar_url": "https://images.lumacdn.com/avatars/w9/51a9fbc6-cce6-4605-a8b0-15e7d96a683a.jpg",
+          "bio_short": "beep boop",
+          "instagram_handle": null,
+          "is_verified": false,
+          "last_online_at": "2026-02-26T12:28:49.411Z",
+          "linkedin_handle": "/in/bart-karalus",
+          "name": "Bartłomiej Karalus",
+          "tiktok_handle": null,
+          "timezone": "Europe/Warsaw",
+          "twitter_handle": null,
+          "username": "rux1",
+          "website": "https://rux.one",
+          "youtube_handle": ""
+        },
+        {
+          "api_id": "usr-FRFZR7nEdXzC9nO",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_43.png",
+          "bio_short": null,
+          "instagram_handle": null,
+          "is_verified": false,
+          "last_online_at": null,
+          "linkedin_handle": null,
+          "name": "Mirek",
+          "tiktok_handle": null,
+          "timezone": "Europe/Warsaw",
+          "twitter_handle": null,
+          "username": null,
+          "website": null,
+          "youtube_handle": null
+        },
+        {
+          "api_id": "usr-rGEesALaiFuWoUd",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_46.png",
+          "bio_short": null,
+          "instagram_handle": null,
+          "is_verified": false,
+          "last_online_at": "2025-11-05T12:21:20.460Z",
+          "linkedin_handle": null,
+          "name": "Łukasz Lenartowski ",
+          "tiktok_handle": null,
+          "timezone": "Europe/Warsaw",
+          "twitter_handle": null,
+          "username": null,
+          "website": null,
+          "youtube_handle": null
+        },
+        {
+          "api_id": "usr-DalF5gKdWbFEp2A",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_30.png",
+          "bio_short": null,
+          "instagram_handle": null,
+          "is_verified": false,
+          "last_online_at": "2026-02-23T13:17:20.192Z",
+          "linkedin_handle": null,
+          "name": "Krzysztof",
+          "tiktok_handle": null,
+          "timezone": "Europe/Warsaw",
+          "twitter_handle": null,
+          "username": null,
+          "website": null,
+          "youtube_handle": null
+        },
+        {
+          "api_id": "usr-ZToQovCggVSZvCK",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_3.png",
+          "bio_short": null,
+          "instagram_handle": null,
+          "is_verified": false,
+          "last_online_at": null,
+          "linkedin_handle": null,
+          "name": "Tadeusz",
+          "tiktok_handle": null,
+          "timezone": "Europe/Warsaw",
+          "twitter_handle": null,
+          "username": null,
+          "website": null,
+          "youtube_handle": null
+        },
+        {
+          "api_id": "usr-Z2lrxHPLdduaDby",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_7.png",
+          "bio_short": null,
+          "instagram_handle": null,
+          "is_verified": false,
+          "last_online_at": null,
+          "linkedin_handle": null,
+          "name": "Łukasz",
+          "tiktok_handle": null,
+          "timezone": "Europe/Warsaw",
+          "twitter_handle": null,
+          "username": null,
+          "website": null,
+          "youtube_handle": null
+        },
+        {
+          "api_id": "usr-qXKvjq6K1qPByTW",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_44.png",
+          "bio_short": null,
+          "instagram_handle": null,
+          "is_verified": false,
+          "last_online_at": null,
+          "linkedin_handle": null,
+          "name": "Rafał Ciupek",
+          "tiktok_handle": null,
+          "timezone": "Europe/Warsaw",
+          "twitter_handle": null,
+          "username": null,
+          "website": null,
+          "youtube_handle": null
+        },
+        {
+          "api_id": "usr-AvK8pwozoCaEfEx",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_43.png",
+          "bio_short": null,
+          "instagram_handle": null,
+          "is_verified": false,
+          "last_online_at": null,
+          "linkedin_handle": null,
+          "name": "Kuba",
+          "tiktok_handle": null,
+          "timezone": "Europe/Warsaw",
+          "twitter_handle": null,
+          "username": null,
+          "website": null,
+          "youtube_handle": null
+        }
+      ],
+      "role": null,
+      "manage_access": null,
+      "waitlist_active": false,
+      "featured_city": null,
+      "calendar_api_id": "cal-LgZzH80VBHWnNQy",
+      "is_manager": true,
+      "platform": "luma",
+      "status": "approved",
+      "submitted_by_user_api_id": "usr-1AnhLjq1U8joBen",
+      "tags": []
+    },
+    {
+      "api_id": "calev-Aa0LQvvTaKU3iJh",
+      "event": {
+        "api_id": "evt-RWDMZ0XZMBOaUPg",
+        "calendar_api_id": "cal-LgZzH80VBHWnNQy",
+        "cover_url": "https://images.lumacdn.com/event-covers/4o/4fb244fe-4bd9-47fa-8af5-c438f5b3f9b4.png",
+        "end_at": "2025-12-18T21:00:00.000Z",
+        "event_type": "independent",
+        "hide_rsvp": false,
+        "location_type": "offline",
+        "name": "AI Jam Łódź #19",
+        "one_to_one": true,
+        "recurrence_id": null,
+        "show_guest_list": true,
+        "start_at": "2025-12-18T17:30:00.000Z",
+        "timezone": "Europe/Warsaw",
+        "url": "xfv0pv33",
+        "user_api_id": "usr-1AnhLjq1U8joBen",
+        "visibility": "public",
+        "virtual_info": {
+          "has_access": false
+        },
+        "geo_address_info": {
+          "city": "Łódź",
+          "type": "google",
+          "region": "Województwo łódzkie",
+          "address": "Get Software Done",
+          "country": "Poland",
+          "place_id": "ChIJd6sDAfTKG0cR2MNU-dfzwRQ",
+          "localized": {
+            "pl": {
+              "city": "Łódź",
+              "region": "Województwo łódzkie",
+              "address": "Get Software Done",
+              "country": "Polska",
+              "city_state": "Łódź, Województwo łódzkie",
+              "full_address": "Get Software Done, Wydawnicza 1/3C, 92-333 Łódź, Polska"
+            }
+          },
+          "city_state": "Łódź, Województwo łódzkie",
+          "description": "na teren prowadzą dwie bramy, jest parking, pierwsze piętro, wejście od lewej",
+          "sublocality": "Wydawnicza Park",
+          "country_code": "PL",
+          "full_address": "Get Software Done, Wydawnicza 1/3C, 92-333 Łódź, Poland",
+          "short_address": "Wydawnicza 1/3C, Łódź",
+          "apple_maps_place_id": null,
+          "mode": "shown"
+        },
+        "geo_address_visibility": "public",
+        "coordinate": {
+          "longitude": 19.489669000000003,
+          "latitude": 51.7645827
+        },
+        "waitlist_enabled": true,
+        "waitlist_status": "enabled"
+      },
+      "cover_image": {
+        "colors": [
+          "#0e0b18",
+          "#5f184b",
+          "#0b406b",
+          "#f29545"
+        ],
+        "palette": {
+          "neutral": [
+            {
+              "color": "#0f0b18",
+              "percentage": 44.73
+            },
+            {
+              "color": "#1b214b",
+              "percentage": 6.56
+            }
+          ],
+          "vibrant": [
+            {
+              "color": "#0b406b",
+              "percentage": 9.05
+            },
+            {
+              "color": "#bb4382",
+              "percentage": 1.68
+            },
+            {
+              "color": "#e6924a",
+              "percentage": 1.59
+            }
+          ]
+        }
+      },
+      "calendar": {
+        "access_level": "public",
+        "api_id": "cal-LgZzH80VBHWnNQy",
+        "avatar_url": "https://cdn.lu.ma/avatars-default/community_avatar_21.png",
+        "coordinate": {
+          "longitude": 19.4558778,
+          "latitude": 51.7592924
+        },
+        "cover_image_url": "https://images.lumacdn.com/calendar-cover-images/0q/fdf857ad-8f6b-488f-b7c9-8fe7ded81ff8.png",
+        "description_short": "",
+        "event_submission_restriction": "open",
+        "geo_city": "Łódź",
+        "geo_country": "Poland",
+        "geo_region": "Łódź Voivodeship",
+        "google_measurement_id": null,
+        "instagram_handle": null,
+        "is_blocked": false,
+        "launch_status": "launched",
+        "linkedin_handle": null,
+        "luma_plus_active": false,
+        "meta_pixel_id": null,
+        "name": "AI Jam Łódź",
+        "personal_user_api_id": null,
+        "refund_policy": null,
+        "slug": "aijam",
+        "social_image_url": "https://images.lumacdn.com/calendar-cover-images/04/04adbb2b-1661-4780-b1ae-f133b4a12680.png",
+        "stripe_account_id": null,
+        "tax_config": null,
+        "tiktok_handle": null,
+        "timezone": "Europe/Warsaw",
+        "tint_color": "#AB46DD",
+        "track_meta_ads_from_luma": false,
+        "twitter_handle": null,
+        "verified_at": null,
+        "website": null,
+        "youtube_handle": null,
+        "is_personal": false,
+        "personal_user": null
+      },
+      "start_at": "2025-12-18T17:30:00.000Z",
+      "hosts": [
+        {
+          "name": "Bartłomiej Karalus",
+          "api_id": "usr-1AnhLjq1U8joBen",
+          "website": "https://rux.one",
+          "timezone": "Europe/Warsaw",
+          "username": "rux1",
+          "bio_short": "beep boop",
+          "avatar_url": "https://images.lumacdn.com/avatars/w9/51a9fbc6-cce6-4605-a8b0-15e7d96a683a.jpg",
+          "is_verified": false,
+          "tiktok_handle": null,
+          "last_online_at": "2026-02-26T12:28:49.411Z",
+          "twitter_handle": null,
+          "youtube_handle": "",
+          "linkedin_handle": "/in/bart-karalus",
+          "instagram_handle": null
+        }
+      ],
+      "guest_count": 10,
+      "ticket_count": 10,
+      "ticket_info": {
+        "price": null,
+        "is_free": true,
+        "max_price": null,
+        "is_sold_out": false,
+        "spots_remaining": 10,
+        "is_near_capacity": false,
+        "require_approval": false,
+        "currency_info": null
+      },
+      "featured_guests": [
+        {
+          "api_id": "usr-GpLer5Oxl6b6Qb8",
+          "avatar_url": "https://images.lumacdn.com/avatars/z8/77f55d0b-4f31-4f5d-b239-d02a5424f496.png",
+          "bio_short": null,
+          "instagram_handle": null,
+          "is_verified": false,
+          "last_online_at": "2026-02-25T09:08:04.141Z",
+          "linkedin_handle": null,
+          "name": "Tomasz",
+          "tiktok_handle": null,
+          "timezone": "Europe/Warsaw",
+          "twitter_handle": null,
+          "username": null,
+          "website": null,
+          "youtube_handle": null
+        },
+        {
+          "api_id": "usr-Kv5xEgcv7xZlV9A",
+          "avatar_url": "https://images.lumacdn.com/avatars/9b/b8d63cc1-cb6e-4a5b-abd3-d6c439c2b55e.png",
+          "bio_short": null,
+          "instagram_handle": null,
+          "is_verified": false,
+          "last_online_at": "2026-02-24T08:39:53.662Z",
+          "linkedin_handle": "/in/konrad-alfaro",
+          "name": "Konrad Alfaro",
+          "tiktok_handle": null,
+          "timezone": "Europe/Warsaw",
+          "twitter_handle": null,
+          "username": null,
+          "website": null,
+          "youtube_handle": null
+        },
+        {
+          "api_id": "usr-Seml1vVxD6I7fwl",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_19.png",
+          "bio_short": null,
+          "instagram_handle": null,
+          "is_verified": false,
+          "last_online_at": "2026-02-20T13:38:01.362Z",
+          "linkedin_handle": "/in/rafalwyderka",
+          "name": "Rafał Wyderka",
+          "tiktok_handle": null,
+          "timezone": "Europe/Warsaw",
+          "twitter_handle": null,
+          "username": null,
+          "website": null,
+          "youtube_handle": null
+        },
+        {
+          "api_id": "usr-rNQuAqobhJ6h2Uz",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_19.png",
+          "bio_short": null,
+          "instagram_handle": null,
+          "is_verified": false,
+          "last_online_at": "2025-12-17T16:25:49.223Z",
+          "linkedin_handle": null,
+          "name": "Damchi ",
+          "tiktok_handle": null,
+          "timezone": "Europe/Warsaw",
+          "twitter_handle": null,
+          "username": null,
+          "website": null,
+          "youtube_handle": null
+        },
+        {
+          "api_id": "usr-ZToQovCggVSZvCK",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_3.png",
+          "bio_short": null,
+          "instagram_handle": null,
+          "is_verified": false,
+          "last_online_at": null,
+          "linkedin_handle": null,
+          "name": "Tadeusz",
+          "tiktok_handle": null,
+          "timezone": "Europe/Warsaw",
+          "twitter_handle": null,
+          "username": null,
+          "website": null,
+          "youtube_handle": null
+        },
+        {
+          "api_id": "usr-NNkb2GpCUzi4WQK",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_25.png",
+          "bio_short": null,
+          "instagram_handle": null,
+          "is_verified": false,
+          "last_online_at": null,
+          "linkedin_handle": null,
+          "name": "Maciej ",
+          "tiktok_handle": null,
+          "timezone": "Europe/Warsaw",
+          "twitter_handle": null,
+          "username": null,
+          "website": null,
+          "youtube_handle": null
+        },
+        {
+          "api_id": "usr-YpnkxJd6feyCZLy",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_1.png",
+          "bio_short": null,
+          "instagram_handle": null,
+          "is_verified": false,
+          "last_online_at": "2026-02-24T17:58:46.450Z",
+          "linkedin_handle": "/in/pawellewinski",
+          "name": "Paweł",
+          "tiktok_handle": null,
+          "timezone": "Europe/Warsaw",
+          "twitter_handle": null,
+          "username": null,
+          "website": null,
+          "youtube_handle": null
+        },
+        {
+          "api_id": "usr-8F4HnPuZKB56vrC",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_20.png",
+          "bio_short": null,
+          "instagram_handle": null,
+          "is_verified": false,
+          "last_online_at": null,
+          "linkedin_handle": null,
+          "name": "Maciej",
+          "tiktok_handle": null,
+          "timezone": "Europe/Warsaw",
+          "twitter_handle": null,
+          "username": null,
+          "website": null,
+          "youtube_handle": null
+        },
+        {
+          "api_id": "usr-SGDjiUGBuFOMpwU",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_37.png",
+          "bio_short": null,
+          "instagram_handle": null,
+          "is_verified": false,
+          "last_online_at": null,
+          "linkedin_handle": null,
+          "name": "Artur",
+          "tiktok_handle": null,
+          "timezone": "Europe/Warsaw",
+          "twitter_handle": null,
+          "username": null,
+          "website": null,
+          "youtube_handle": null
+        },
+        {
+          "api_id": "usr-KmdVNsRXAQX7sna",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_26.png",
+          "bio_short": null,
+          "instagram_handle": null,
+          "is_verified": false,
+          "last_online_at": "2026-02-20T21:05:02.182Z",
+          "linkedin_handle": null,
+          "name": "Piotr kowalski",
+          "tiktok_handle": null,
+          "timezone": "Europe/Warsaw",
+          "twitter_handle": null,
+          "username": null,
+          "website": null,
+          "youtube_handle": null
+        }
+      ],
+      "role": null,
+      "manage_access": null,
+      "waitlist_active": false,
+      "featured_city": null,
+      "calendar_api_id": "cal-LgZzH80VBHWnNQy",
+      "is_manager": true,
+      "platform": "luma",
+      "status": "approved",
+      "submitted_by_user_api_id": "usr-1AnhLjq1U8joBen",
+      "tags": []
+    },
+    {
+      "api_id": "calev-CzPi5eljnylsUBg",
+      "event": {
+        "api_id": "evt-9xV3LBETDUZj6Fy",
+        "calendar_api_id": "cal-LgZzH80VBHWnNQy",
+        "cover_url": "https://images.lumacdn.com/event-covers/4o/4fb244fe-4bd9-47fa-8af5-c438f5b3f9b4.png",
+        "end_at": "2025-12-04T21:00:00.000Z",
+        "event_type": "independent",
+        "hide_rsvp": false,
+        "location_type": "offline",
+        "name": "AI Jam Łódź #18",
+        "one_to_one": true,
+        "recurrence_id": null,
+        "show_guest_list": true,
+        "start_at": "2025-12-04T17:30:00.000Z",
+        "timezone": "Europe/Warsaw",
+        "url": "f0z3wu58",
+        "user_api_id": "usr-1AnhLjq1U8joBen",
+        "visibility": "public",
+        "virtual_info": {
+          "has_access": false
+        },
+        "geo_address_info": {
+          "city": "Łódź",
+          "type": "google",
+          "region": "Województwo łódzkie",
+          "address": "Get Software Done",
+          "country": "Poland",
+          "place_id": "ChIJd6sDAfTKG0cR2MNU-dfzwRQ",
+          "city_state": "Łódź, Województwo łódzkie",
+          "description": "na teren prowadzą dwie bramy, jest parking, pierwsze piętro, wejście od lewej",
+          "country_code": "PL",
+          "full_address": "Get Software Done, Wydawnicza 1/3C, 92-333 Łódź, Poland",
+          "mode": "shown"
+        },
+        "geo_address_visibility": "public",
+        "coordinate": {
+          "longitude": 19.489669000000003,
+          "latitude": 51.7645827
+        },
+        "waitlist_enabled": true,
+        "waitlist_status": "enabled"
+      },
+      "cover_image": {
+        "colors": [
+          "#0e0b18",
+          "#5f184b",
+          "#0b406b",
+          "#f29545"
+        ],
+        "palette": {
+          "neutral": [
+            {
+              "color": "#0f0b18",
+              "percentage": 44.73
+            },
+            {
+              "color": "#1b214b",
+              "percentage": 6.56
+            }
+          ],
+          "vibrant": [
+            {
+              "color": "#0b406b",
+              "percentage": 9.05
+            },
+            {
+              "color": "#bb4382",
+              "percentage": 1.68
+            },
+            {
+              "color": "#e6924a",
+              "percentage": 1.59
+            }
+          ]
+        }
+      },
+      "calendar": {
+        "access_level": "public",
+        "api_id": "cal-LgZzH80VBHWnNQy",
+        "avatar_url": "https://cdn.lu.ma/avatars-default/community_avatar_21.png",
+        "coordinate": {
+          "longitude": 19.4558778,
+          "latitude": 51.7592924
+        },
+        "cover_image_url": "https://images.lumacdn.com/calendar-cover-images/0q/fdf857ad-8f6b-488f-b7c9-8fe7ded81ff8.png",
+        "description_short": "",
+        "event_submission_restriction": "open",
+        "geo_city": "Łódź",
+        "geo_country": "Poland",
+        "geo_region": "Łódź Voivodeship",
+        "google_measurement_id": null,
+        "instagram_handle": null,
+        "is_blocked": false,
+        "launch_status": "launched",
+        "linkedin_handle": null,
+        "luma_plus_active": false,
+        "meta_pixel_id": null,
+        "name": "AI Jam Łódź",
+        "personal_user_api_id": null,
+        "refund_policy": null,
+        "slug": "aijam",
+        "social_image_url": "https://images.lumacdn.com/calendar-cover-images/04/04adbb2b-1661-4780-b1ae-f133b4a12680.png",
+        "stripe_account_id": null,
+        "tax_config": null,
+        "tiktok_handle": null,
+        "timezone": "Europe/Warsaw",
+        "tint_color": "#AB46DD",
+        "track_meta_ads_from_luma": false,
+        "twitter_handle": null,
+        "verified_at": null,
+        "website": null,
+        "youtube_handle": null,
+        "is_personal": false,
+        "personal_user": null
+      },
+      "start_at": "2025-12-04T17:30:00.000Z",
+      "hosts": [
+        {
+          "name": "Bartłomiej Karalus",
+          "api_id": "usr-1AnhLjq1U8joBen",
+          "website": "https://rux.one",
+          "timezone": "Europe/Warsaw",
+          "username": "rux1",
+          "bio_short": "beep boop",
+          "avatar_url": "https://images.lumacdn.com/avatars/w9/51a9fbc6-cce6-4605-a8b0-15e7d96a683a.jpg",
+          "is_verified": false,
+          "tiktok_handle": null,
+          "last_online_at": "2026-02-26T12:28:49.411Z",
+          "twitter_handle": null,
+          "youtube_handle": "",
+          "linkedin_handle": "/in/bart-karalus",
+          "instagram_handle": null
+        }
+      ],
+      "guest_count": 10,
+      "ticket_count": 10,
+      "ticket_info": {
+        "price": null,
+        "is_free": true,
+        "max_price": null,
+        "is_sold_out": false,
+        "spots_remaining": 10,
+        "is_near_capacity": false,
+        "require_approval": false,
+        "currency_info": null
+      },
+      "featured_guests": [
+        {
+          "api_id": "usr-EEzDhxkY1iIDcWc",
+          "avatar_url": "https://images.lumacdn.com/avatars/ii/4689d2fa-d437-420e-889e-4521115ae1e2.png",
+          "bio_short": "AI Solutions for Small Businesses\nI create custom AI applications that solve real problems for micro and small businesses.",
+          "instagram_handle": null,
+          "is_verified": false,
+          "last_online_at": "2026-02-17T03:52:40.719Z",
+          "linkedin_handle": "/in/marcinmove37th",
+          "name": "Marcin Lisiak",
+          "tiktok_handle": null,
+          "timezone": "Europe/Warsaw",
+          "twitter_handle": null,
+          "username": "move37th",
+          "website": null,
+          "youtube_handle": ""
+        },
+        {
+          "api_id": "usr-xNlqDKMM7D5ETrH",
+          "avatar_url": "https://images.lumacdn.com/avatars/m6/1fa299c2-59d0-45e6-a06a-d56db9d91863.png",
+          "bio_short": null,
+          "instagram_handle": null,
+          "is_verified": false,
+          "last_online_at": "2025-12-04T20:21:03.897Z",
+          "linkedin_handle": null,
+          "name": "Bartosz Leczycki",
+          "tiktok_handle": null,
+          "timezone": "Europe/Warsaw",
+          "twitter_handle": null,
+          "username": null,
+          "website": null,
+          "youtube_handle": null
+        },
+        {
+          "api_id": "usr-GpLer5Oxl6b6Qb8",
+          "avatar_url": "https://images.lumacdn.com/avatars/z8/77f55d0b-4f31-4f5d-b239-d02a5424f496.png",
+          "bio_short": null,
+          "instagram_handle": null,
+          "is_verified": false,
+          "last_online_at": "2026-02-25T09:08:04.141Z",
+          "linkedin_handle": null,
+          "name": "Tomasz",
+          "tiktok_handle": null,
+          "timezone": "Europe/Warsaw",
+          "twitter_handle": null,
+          "username": null,
+          "website": null,
+          "youtube_handle": null
+        },
+        {
+          "api_id": "usr-1AnhLjq1U8joBen",
+          "avatar_url": "https://images.lumacdn.com/avatars/w9/51a9fbc6-cce6-4605-a8b0-15e7d96a683a.jpg",
+          "bio_short": "beep boop",
+          "instagram_handle": null,
+          "is_verified": false,
+          "last_online_at": "2026-02-26T12:28:49.411Z",
+          "linkedin_handle": "/in/bart-karalus",
+          "name": "Bartłomiej Karalus",
+          "tiktok_handle": null,
+          "timezone": "Europe/Warsaw",
+          "twitter_handle": null,
+          "username": "rux1",
+          "website": "https://rux.one",
+          "youtube_handle": ""
+        },
+        {
+          "api_id": "usr-qXKvjq6K1qPByTW",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_44.png",
+          "bio_short": null,
+          "instagram_handle": null,
+          "is_verified": false,
+          "last_online_at": null,
+          "linkedin_handle": null,
+          "name": "Rafał Ciupek",
+          "tiktok_handle": null,
+          "timezone": "Europe/Warsaw",
+          "twitter_handle": null,
+          "username": null,
+          "website": null,
+          "youtube_handle": null
+        },
+        {
+          "api_id": "usr-ILU1SyN6p1cQWGy",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_19.png",
+          "bio_short": null,
+          "instagram_handle": null,
+          "is_verified": false,
+          "last_online_at": null,
+          "linkedin_handle": null,
+          "name": "Damianachchi",
+          "tiktok_handle": null,
+          "timezone": "Europe/Warsaw",
+          "twitter_handle": null,
+          "username": null,
+          "website": null,
+          "youtube_handle": null
+        },
+        {
+          "api_id": "usr-yri3f2sgXmr4lHg",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_44.png",
+          "bio_short": null,
+          "instagram_handle": null,
+          "is_verified": false,
+          "last_online_at": null,
+          "linkedin_handle": null,
+          "name": "Alex",
+          "tiktok_handle": null,
+          "timezone": "Europe/Warsaw",
+          "twitter_handle": null,
+          "username": null,
+          "website": null,
+          "youtube_handle": null
+        },
+        {
+          "api_id": "usr-ZToQovCggVSZvCK",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_3.png",
+          "bio_short": null,
+          "instagram_handle": null,
+          "is_verified": false,
+          "last_online_at": null,
+          "linkedin_handle": null,
+          "name": "Tadeusz",
+          "tiktok_handle": null,
+          "timezone": "Europe/Warsaw",
+          "twitter_handle": null,
+          "username": null,
+          "website": null,
+          "youtube_handle": null
+        },
+        {
+          "api_id": "usr-KmdVNsRXAQX7sna",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_26.png",
+          "bio_short": null,
+          "instagram_handle": null,
+          "is_verified": false,
+          "last_online_at": "2026-02-20T21:05:02.182Z",
+          "linkedin_handle": null,
+          "name": "Piotr kowalski",
+          "tiktok_handle": null,
+          "timezone": "Europe/Warsaw",
+          "twitter_handle": null,
+          "username": null,
+          "website": null,
+          "youtube_handle": null
+        },
+        {
+          "api_id": "usr-hI64fGJFoHFfJJY",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_21.png",
+          "bio_short": null,
+          "instagram_handle": null,
+          "is_verified": false,
+          "last_online_at": null,
+          "linkedin_handle": null,
+          "name": "Maciej Ciszek",
+          "tiktok_handle": null,
+          "timezone": "Europe/Warsaw",
+          "twitter_handle": null,
+          "username": null,
+          "website": null,
+          "youtube_handle": null
+        }
+      ],
+      "role": null,
+      "manage_access": null,
+      "waitlist_active": false,
+      "featured_city": null,
+      "calendar_api_id": "cal-LgZzH80VBHWnNQy",
+      "is_manager": true,
+      "platform": "luma",
+      "status": "approved",
+      "submitted_by_user_api_id": "usr-1AnhLjq1U8joBen",
+      "tags": []
+    },
+    {
+      "api_id": "calev-fa7Jm6w2B6XLk3n",
+      "event": {
+        "api_id": "evt-zDTTRPn8Y3B4SMO",
+        "calendar_api_id": "cal-LgZzH80VBHWnNQy",
+        "cover_url": "https://images.lumacdn.com/event-covers/4o/4fb244fe-4bd9-47fa-8af5-c438f5b3f9b4.png",
+        "end_at": "2025-11-13T21:00:00.000Z",
+        "event_type": "independent",
+        "hide_rsvp": false,
+        "location_type": "offline",
+        "name": "AI Jam Łódź #17",
+        "one_to_one": true,
+        "recurrence_id": null,
+        "show_guest_list": true,
+        "start_at": "2025-11-13T17:30:00.000Z",
+        "timezone": "Europe/Warsaw",
+        "url": "wygy4mly",
+        "user_api_id": "usr-1AnhLjq1U8joBen",
+        "visibility": "public",
+        "virtual_info": {
+          "has_access": false
+        },
+        "geo_address_info": {
+          "city": "Łódź",
+          "type": "google",
+          "region": "Województwo łódzkie",
+          "address": "Get Software Done",
+          "country": "Poland",
+          "place_id": "ChIJd6sDAfTKG0cR2MNU-dfzwRQ",
+          "city_state": "Łódź, Województwo łódzkie",
+          "description": "pierwsze piętro, wejście od lewej",
+          "country_code": "PL",
+          "full_address": "Get Software Done, Wydawnicza 1/3C, 92-333 Łódź, Poland",
+          "mode": "shown"
+        },
+        "geo_address_visibility": "public",
+        "coordinate": {
+          "longitude": 19.489669000000003,
+          "latitude": 51.7645827
+        },
+        "waitlist_enabled": true,
+        "waitlist_status": "enabled"
+      },
+      "cover_image": {
+        "colors": [
+          "#0e0b18",
+          "#5f184b",
+          "#0b406b",
+          "#f29545"
+        ],
+        "palette": {
+          "neutral": [
+            {
+              "color": "#0f0b18",
+              "percentage": 44.73
+            },
+            {
+              "color": "#1b214b",
+              "percentage": 6.56
+            }
+          ],
+          "vibrant": [
+            {
+              "color": "#0b406b",
+              "percentage": 9.05
+            },
+            {
+              "color": "#bb4382",
+              "percentage": 1.68
+            },
+            {
+              "color": "#e6924a",
+              "percentage": 1.59
+            }
+          ]
+        }
+      },
+      "calendar": {
+        "access_level": "public",
+        "api_id": "cal-LgZzH80VBHWnNQy",
+        "avatar_url": "https://cdn.lu.ma/avatars-default/community_avatar_21.png",
+        "coordinate": {
+          "longitude": 19.4558778,
+          "latitude": 51.7592924
+        },
+        "cover_image_url": "https://images.lumacdn.com/calendar-cover-images/0q/fdf857ad-8f6b-488f-b7c9-8fe7ded81ff8.png",
+        "description_short": "",
+        "event_submission_restriction": "open",
+        "geo_city": "Łódź",
+        "geo_country": "Poland",
+        "geo_region": "Łódź Voivodeship",
+        "google_measurement_id": null,
+        "instagram_handle": null,
+        "is_blocked": false,
+        "launch_status": "launched",
+        "linkedin_handle": null,
+        "luma_plus_active": false,
+        "meta_pixel_id": null,
+        "name": "AI Jam Łódź",
+        "personal_user_api_id": null,
+        "refund_policy": null,
+        "slug": "aijam",
+        "social_image_url": "https://images.lumacdn.com/calendar-cover-images/04/04adbb2b-1661-4780-b1ae-f133b4a12680.png",
+        "stripe_account_id": null,
+        "tax_config": null,
+        "tiktok_handle": null,
+        "timezone": "Europe/Warsaw",
+        "tint_color": "#AB46DD",
+        "track_meta_ads_from_luma": false,
+        "twitter_handle": null,
+        "verified_at": null,
+        "website": null,
+        "youtube_handle": null,
+        "is_personal": false,
+        "personal_user": null
+      },
+      "start_at": "2025-11-13T17:30:00.000Z",
+      "hosts": [
+        {
+          "name": "Bartłomiej Karalus",
+          "api_id": "usr-1AnhLjq1U8joBen",
+          "website": "https://rux.one",
+          "timezone": "Europe/Warsaw",
+          "username": "rux1",
+          "bio_short": "beep boop",
+          "avatar_url": "https://images.lumacdn.com/avatars/w9/51a9fbc6-cce6-4605-a8b0-15e7d96a683a.jpg",
+          "is_verified": false,
+          "tiktok_handle": null,
+          "last_online_at": "2026-02-26T12:28:49.411Z",
+          "twitter_handle": null,
+          "youtube_handle": "",
+          "linkedin_handle": "/in/bart-karalus",
+          "instagram_handle": null
+        }
+      ],
+      "guest_count": 12,
+      "ticket_count": 12,
+      "ticket_info": {
+        "price": null,
+        "is_free": true,
+        "max_price": null,
+        "is_sold_out": false,
+        "spots_remaining": 8,
+        "is_near_capacity": false,
+        "require_approval": false,
+        "currency_info": null
+      },
+      "featured_guests": [
+        {
+          "api_id": "usr-GpLer5Oxl6b6Qb8",
+          "avatar_url": "https://images.lumacdn.com/avatars/z8/77f55d0b-4f31-4f5d-b239-d02a5424f496.png",
+          "bio_short": null,
+          "instagram_handle": null,
+          "is_verified": false,
+          "last_online_at": "2026-02-25T09:08:04.141Z",
+          "linkedin_handle": null,
+          "name": "Tomasz",
+          "tiktok_handle": null,
+          "timezone": "Europe/Warsaw",
+          "twitter_handle": null,
+          "username": null,
+          "website": null,
+          "youtube_handle": null
+        },
+        {
+          "api_id": "usr-Skb4PJFSIEaJ6yq",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_21.png",
+          "bio_short": null,
+          "instagram_handle": null,
+          "is_verified": false,
+          "last_online_at": null,
+          "linkedin_handle": null,
+          "name": "Robert",
+          "tiktok_handle": null,
+          "timezone": "Europe/Warsaw",
+          "twitter_handle": null,
+          "username": null,
+          "website": null,
+          "youtube_handle": null
+        },
+        {
+          "api_id": "usr-PgG4ML9GBk4AzaS",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_4.png",
+          "bio_short": null,
+          "instagram_handle": null,
+          "is_verified": false,
+          "last_online_at": null,
+          "linkedin_handle": null,
+          "name": "Rafał",
+          "tiktok_handle": null,
+          "timezone": "Europe/Warsaw",
+          "twitter_handle": null,
+          "username": null,
+          "website": null,
+          "youtube_handle": null
+        },
+        {
+          "api_id": "usr-hI64fGJFoHFfJJY",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_21.png",
+          "bio_short": null,
+          "instagram_handle": null,
+          "is_verified": false,
+          "last_online_at": null,
+          "linkedin_handle": null,
+          "name": "Maciej Ciszek",
+          "tiktok_handle": null,
+          "timezone": "Europe/Warsaw",
+          "twitter_handle": null,
+          "username": null,
+          "website": null,
+          "youtube_handle": null
+        },
+        {
+          "api_id": "usr-BBEfrOP935Qggf5",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_16.png",
+          "bio_short": null,
+          "instagram_handle": null,
+          "is_verified": false,
+          "last_online_at": null,
+          "linkedin_handle": null,
+          "name": "Jakub",
+          "tiktok_handle": null,
+          "timezone": "Europe/Warsaw",
+          "twitter_handle": null,
+          "username": null,
+          "website": null,
+          "youtube_handle": null
+        },
+        {
+          "api_id": "usr-ycHND43iKXCq47I",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_16.png",
+          "bio_short": null,
+          "instagram_handle": null,
+          "is_verified": false,
+          "last_online_at": null,
+          "linkedin_handle": null,
+          "name": "Kamil",
+          "tiktok_handle": null,
+          "timezone": "Europe/Warsaw",
+          "twitter_handle": null,
+          "username": null,
+          "website": null,
+          "youtube_handle": null
+        },
+        {
+          "api_id": "usr-NNkb2GpCUzi4WQK",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_25.png",
+          "bio_short": null,
+          "instagram_handle": null,
+          "is_verified": false,
+          "last_online_at": null,
+          "linkedin_handle": null,
+          "name": "Maciej ",
+          "tiktok_handle": null,
+          "timezone": "Europe/Warsaw",
+          "twitter_handle": null,
+          "username": null,
+          "website": null,
+          "youtube_handle": null
+        },
+        {
+          "api_id": "usr-FIfnXcOLHNx78JP",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_17.png",
+          "bio_short": null,
+          "instagram_handle": null,
+          "is_verified": false,
+          "last_online_at": null,
+          "linkedin_handle": null,
+          "name": "Hubert",
+          "tiktok_handle": null,
+          "timezone": "Europe/Warsaw",
+          "twitter_handle": null,
+          "username": null,
+          "website": null,
+          "youtube_handle": null
+        },
+        {
+          "api_id": "usr-yri3f2sgXmr4lHg",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_44.png",
+          "bio_short": null,
+          "instagram_handle": null,
+          "is_verified": false,
+          "last_online_at": null,
+          "linkedin_handle": null,
+          "name": "Alex",
+          "tiktok_handle": null,
+          "timezone": "Europe/Warsaw",
+          "twitter_handle": null,
+          "username": null,
+          "website": null,
+          "youtube_handle": null
+        },
+        {
+          "api_id": "usr-ZToQovCggVSZvCK",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_3.png",
+          "bio_short": null,
+          "instagram_handle": null,
+          "is_verified": false,
+          "last_online_at": null,
+          "linkedin_handle": null,
+          "name": "Tadeusz",
+          "tiktok_handle": null,
+          "timezone": "Europe/Warsaw",
+          "twitter_handle": null,
+          "username": null,
+          "website": null,
+          "youtube_handle": null
+        }
+      ],
+      "role": null,
+      "manage_access": null,
+      "waitlist_active": false,
+      "featured_city": null,
+      "calendar_api_id": "cal-LgZzH80VBHWnNQy",
+      "is_manager": true,
+      "platform": "luma",
+      "status": "approved",
+      "submitted_by_user_api_id": "usr-1AnhLjq1U8joBen",
+      "tags": []
+    },
+    {
+      "api_id": "calev-GZwWGEbxdbcMZgG",
+      "event": {
+        "api_id": "evt-CBGuI4yN2lx2bf2",
+        "calendar_api_id": "cal-LgZzH80VBHWnNQy",
+        "cover_url": "https://images.lumacdn.com/event-covers/4o/4fb244fe-4bd9-47fa-8af5-c438f5b3f9b4.png",
+        "end_at": "2025-10-30T21:00:00.000Z",
+        "event_type": "independent",
+        "hide_rsvp": false,
+        "location_type": "offline",
+        "name": "AI Jam Łódź #16",
+        "one_to_one": true,
+        "recurrence_id": null,
+        "show_guest_list": true,
+        "start_at": "2025-10-30T17:30:00.000Z",
+        "timezone": "Europe/Warsaw",
+        "url": "v0dfao6e",
+        "user_api_id": "usr-1AnhLjq1U8joBen",
+        "visibility": "public",
+        "virtual_info": {
+          "has_access": false
+        },
+        "geo_address_info": {
+          "city": "Łódź",
+          "type": "google",
+          "region": "Województwo łódzkie",
+          "address": "Get Software Done",
+          "country": "Poland",
+          "place_id": "ChIJd6sDAfTKG0cR2MNU-dfzwRQ",
+          "city_state": "Łódź, Województwo łódzkie",
+          "description": "pierwsze piętro, wejście od lewej",
+          "country_code": "PL",
+          "full_address": "Get Software Done, Wydawnicza 1/3C, 92-333 Łódź, Poland",
+          "mode": "shown"
+        },
+        "geo_address_visibility": "public",
+        "coordinate": {
+          "longitude": 19.489669000000003,
+          "latitude": 51.7645827
+        },
+        "waitlist_enabled": true,
+        "waitlist_status": "active"
+      },
+      "cover_image": {
+        "colors": [
+          "#0e0b18",
+          "#5f184b",
+          "#0b406b",
+          "#f29545"
+        ],
+        "palette": {
+          "neutral": [
+            {
+              "color": "#0f0b18",
+              "percentage": 44.73
+            },
+            {
+              "color": "#1b214b",
+              "percentage": 6.56
+            }
+          ],
+          "vibrant": [
+            {
+              "color": "#0b406b",
+              "percentage": 9.05
+            },
+            {
+              "color": "#bb4382",
+              "percentage": 1.68
+            },
+            {
+              "color": "#e6924a",
+              "percentage": 1.59
+            }
+          ]
+        }
+      },
+      "calendar": {
+        "access_level": "public",
+        "api_id": "cal-LgZzH80VBHWnNQy",
+        "avatar_url": "https://cdn.lu.ma/avatars-default/community_avatar_21.png",
+        "coordinate": {
+          "longitude": 19.4558778,
+          "latitude": 51.7592924
+        },
+        "cover_image_url": "https://images.lumacdn.com/calendar-cover-images/0q/fdf857ad-8f6b-488f-b7c9-8fe7ded81ff8.png",
+        "description_short": "",
+        "event_submission_restriction": "open",
+        "geo_city": "Łódź",
+        "geo_country": "Poland",
+        "geo_region": "Łódź Voivodeship",
+        "google_measurement_id": null,
+        "instagram_handle": null,
+        "is_blocked": false,
+        "launch_status": "launched",
+        "linkedin_handle": null,
+        "luma_plus_active": false,
+        "meta_pixel_id": null,
+        "name": "AI Jam Łódź",
+        "personal_user_api_id": null,
+        "refund_policy": null,
+        "slug": "aijam",
+        "social_image_url": "https://images.lumacdn.com/calendar-cover-images/04/04adbb2b-1661-4780-b1ae-f133b4a12680.png",
+        "stripe_account_id": null,
+        "tax_config": null,
+        "tiktok_handle": null,
+        "timezone": "Europe/Warsaw",
+        "tint_color": "#AB46DD",
+        "track_meta_ads_from_luma": false,
+        "twitter_handle": null,
+        "verified_at": null,
+        "website": null,
+        "youtube_handle": null,
+        "is_personal": false,
+        "personal_user": null
+      },
+      "start_at": "2025-10-30T17:30:00.000Z",
+      "hosts": [
+        {
+          "name": "Bartłomiej Karalus",
+          "api_id": "usr-1AnhLjq1U8joBen",
+          "website": "https://rux.one",
+          "timezone": "Europe/Warsaw",
+          "username": "rux1",
+          "bio_short": "beep boop",
+          "avatar_url": "https://images.lumacdn.com/avatars/w9/51a9fbc6-cce6-4605-a8b0-15e7d96a683a.jpg",
+          "is_verified": false,
+          "tiktok_handle": null,
+          "last_online_at": "2026-02-26T12:28:49.411Z",
+          "twitter_handle": null,
+          "youtube_handle": "",
+          "linkedin_handle": "/in/bart-karalus",
+          "instagram_handle": null
+        }
+      ],
+      "guest_count": 20,
+      "ticket_count": 20,
+      "ticket_info": {
+        "price": null,
+        "is_free": true,
+        "max_price": null,
+        "is_sold_out": true,
+        "spots_remaining": 0,
+        "is_near_capacity": false,
+        "require_approval": false,
+        "currency_info": null
+      },
+      "featured_guests": [
+        {
+          "api_id": "usr-ZhfpFlVmc6HPbA1",
+          "avatar_url": "https://images.lumacdn.com/avatars/dj/f4d27c38-3392-4635-9a7b-a570ed809267",
+          "bio_short": "",
+          "instagram_handle": null,
+          "is_verified": false,
+          "last_online_at": "2026-02-09T21:06:33.006Z",
+          "linkedin_handle": "/in/maciejrzeznik",
+          "name": "Maciej Rzeznik (Toro Performance)",
+          "tiktok_handle": null,
+          "timezone": "Europe/Warsaw",
+          "twitter_handle": null,
+          "username": null,
+          "website": "https://toro-performance.com",
+          "youtube_handle": null
+        },
+        {
+          "api_id": "usr-GpLer5Oxl6b6Qb8",
+          "avatar_url": "https://images.lumacdn.com/avatars/z8/77f55d0b-4f31-4f5d-b239-d02a5424f496.png",
+          "bio_short": null,
+          "instagram_handle": null,
+          "is_verified": false,
+          "last_online_at": "2026-02-25T09:08:04.141Z",
+          "linkedin_handle": null,
+          "name": "Tomasz",
+          "tiktok_handle": null,
+          "timezone": "Europe/Warsaw",
+          "twitter_handle": null,
+          "username": null,
+          "website": null,
+          "youtube_handle": null
+        },
+        {
+          "api_id": "usr-EEzDhxkY1iIDcWc",
+          "avatar_url": "https://images.lumacdn.com/avatars/ii/4689d2fa-d437-420e-889e-4521115ae1e2.png",
+          "bio_short": "AI Solutions for Small Businesses\nI create custom AI applications that solve real problems for micro and small businesses.",
+          "instagram_handle": null,
+          "is_verified": false,
+          "last_online_at": "2026-02-17T03:52:40.719Z",
+          "linkedin_handle": "/in/marcinmove37th",
+          "name": "Marcin Lisiak",
+          "tiktok_handle": null,
+          "timezone": "Europe/Warsaw",
+          "twitter_handle": null,
+          "username": "move37th",
+          "website": null,
+          "youtube_handle": ""
+        },
+        {
+          "api_id": "usr-eR2kKs8yYMDkW3I",
+          "avatar_url": "https://images.lumacdn.com/avatars/2b/844bfbe8-f869-44b2-bde1-2e7cb24543ff.jpg",
+          "bio_short": "I build smart digital products | CEO @ GSD",
+          "instagram_handle": null,
+          "is_verified": false,
+          "last_online_at": "2026-02-23T09:57:16.708Z",
+          "linkedin_handle": "/in/radeklejsza",
+          "name": "Radek Lejsza",
+          "tiktok_handle": null,
+          "timezone": "Europe/Warsaw",
+          "twitter_handle": null,
+          "username": "rlejsza",
+          "website": "https://www.codeflyers.com",
+          "youtube_handle": ""
+        },
+        {
+          "api_id": "usr-1AnhLjq1U8joBen",
+          "avatar_url": "https://images.lumacdn.com/avatars/w9/51a9fbc6-cce6-4605-a8b0-15e7d96a683a.jpg",
+          "bio_short": "beep boop",
+          "instagram_handle": null,
+          "is_verified": false,
+          "last_online_at": "2026-02-26T12:28:49.411Z",
+          "linkedin_handle": "/in/bart-karalus",
+          "name": "Bartłomiej Karalus",
+          "tiktok_handle": null,
+          "timezone": "Europe/Warsaw",
+          "twitter_handle": null,
+          "username": "rux1",
+          "website": "https://rux.one",
+          "youtube_handle": ""
+        },
+        {
+          "api_id": "usr-ycHND43iKXCq47I",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_16.png",
+          "bio_short": null,
+          "instagram_handle": null,
+          "is_verified": false,
+          "last_online_at": null,
+          "linkedin_handle": null,
+          "name": "Kamil",
+          "tiktok_handle": null,
+          "timezone": "Europe/Warsaw",
+          "twitter_handle": null,
+          "username": null,
+          "website": null,
+          "youtube_handle": null
+        },
+        {
+          "api_id": "usr-oDaQxTS914hVWXm",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_33.png",
+          "bio_short": null,
+          "instagram_handle": null,
+          "is_verified": false,
+          "last_online_at": "2025-10-30T17:15:25.347Z",
+          "linkedin_handle": null,
+          "name": "Róża",
+          "tiktok_handle": null,
+          "timezone": "Europe/Warsaw",
+          "twitter_handle": null,
+          "username": null,
+          "website": null,
+          "youtube_handle": null
+        },
+        {
+          "api_id": "usr-vFOgDcXOsN4eCYg",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_41.png",
+          "bio_short": null,
+          "instagram_handle": null,
+          "is_verified": false,
+          "last_online_at": null,
+          "linkedin_handle": null,
+          "name": "Lidia",
+          "tiktok_handle": null,
+          "timezone": "Europe/Warsaw",
+          "twitter_handle": null,
+          "username": null,
+          "website": null,
+          "youtube_handle": null
+        },
+        {
+          "api_id": "usr-OzbknJbohyrQ4YB",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_35.png",
+          "bio_short": "",
+          "instagram_handle": null,
+          "is_verified": false,
+          "last_online_at": "2026-02-24T19:44:29.220Z",
+          "linkedin_handle": null,
+          "name": "Bartosz",
+          "tiktok_handle": null,
+          "timezone": "Europe/Warsaw",
+          "twitter_handle": null,
+          "username": null,
+          "website": null,
+          "youtube_handle": null
+        },
+        {
+          "api_id": "usr-cfQTyVTR9WhYsmk",
+          "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_15.png",
+          "bio_short": null,
+          "instagram_handle": null,
+          "is_verified": false,
+          "last_online_at": null,
+          "linkedin_handle": null,
+          "name": "Sonia",
+          "tiktok_handle": null,
+          "timezone": "Europe/Warsaw",
+          "twitter_handle": null,
+          "username": null,
+          "website": null,
+          "youtube_handle": null
+        }
+      ],
+      "role": null,
+      "manage_access": null,
+      "waitlist_active": true,
+      "featured_city": null,
+      "calendar_api_id": "cal-LgZzH80VBHWnNQy",
+      "is_manager": true,
+      "platform": "luma",
+      "status": "approved",
+      "submitted_by_user_api_id": "usr-1AnhLjq1U8joBen",
+      "tags": []
+    }
+  ],
+  "has_more": false
+}

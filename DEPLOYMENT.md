@@ -6,10 +6,14 @@
 # 1. Install dependencies
 npm install
 
-# 2. Build the site
+# 2. Configure events endpoint (optional)
+cp .env.example .env
+# Edit .env and set EVENTS_ENDPOINT
+
+# 3. Build the site
 npm run build
 
-# 3. Output is in dist/ directory
+# 4. Output is in dist/ directory
 ```
 
 ## GitHub Actions Deployment
@@ -177,6 +181,53 @@ Should see:
 Cache-Control: public, immutable
 Expires: [1 year from now]
 ```
+
+## Events API Configuration
+
+### Local Development
+
+```bash
+# Copy example env file
+cp .env.example .env
+
+# Edit .env and configure your events endpoint
+nano .env
+```
+
+Example `.env`:
+```
+EVENTS_ENDPOINT=http://localhost:1337/luma_events.json
+EVENTS_TIMEOUT=5000
+```
+
+### Production (GitHub Actions)
+
+Add `EVENTS_ENDPOINT` as a GitHub Actions secret or environment variable:
+
+1. Go to repository Settings → Secrets and variables → Actions
+2. Add new secret: `EVENTS_ENDPOINT`
+3. Value: Your production events API URL
+
+Update `.github/workflows/deploy.yml` to use the secret:
+```yaml
+- name: Build site
+  run: npm run build
+  env:
+    EVENTS_ENDPOINT: ${{ secrets.EVENTS_ENDPOINT }}
+```
+
+### Testing Events API
+
+Start a local server to serve the example events:
+```bash
+# Serve docs/luma_events.json on port 1337
+python3 -m http.server 1337 --directory docs
+
+# In another terminal, build the site
+npm run build
+```
+
+You should see: `✓ Fetched 7 events from API`
 
 ## Updating Content
 

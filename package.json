@@ -16,6 +16,7 @@
     "markdown-it": "^14.0.0",
     "gray-matter": "^4.0.3",
     "html-minifier": "^4.0.0",
-    "fs-extra": "^11.2.0"
+    "fs-extra": "^11.2.0",
+    "dotenv": "^16.4.5"
   }
 }

@@ -15,22 +15,32 @@ Static site generator for the AI Jam meetup website in Łódź.
 ## Project Structure
 
 ```
-.
+/home/bart/code/aijam.pl/
 ├── src/
-│   ├── templates/          # Handlebars templates
-│   │   ├── base.hbs       # Base layout
-│   │   ├── home.hbs       # Homepage template
-│   │   └── partials/      # Reusable components
-│   ├── content/           # Markdown content files
-│   │   └── index.md       # Homepage content
-│   └── assets/            # Static assets
-│       ├── css/           # Stylesheets
-│       ├── js/            # JavaScript
-│       └── fonts/         # Self-hosted fonts
-├── dist/                  # Generated output (gitignored)
-├── build.js               # Build script
-├── package.json           # Dependencies
-└── nginx.conf.example     # Nginx configuration
+│   ├── templates/
+│   │   ├── base.hbs              # Main layout
+│   │   ├── home.hbs              # Homepage template
+│   │   ├── archive.hbs           # Archive page template
+│   │   └── partials/
+│   │       ├── nav.hbs           # Navigation
+│   │       └── footer.hbs        # Footer
+│   ├── content/
+│   │   ├── index.md              # Homepage content (YAML + Markdown)
+│   │   └── archive.md            # Archive page content
+│   └── assets/
+│       ├── css/styles.css        # Custom styles
+│       └── js/main.js            # JavaScript (theme, mobile menu, forms)
+├── dist/                         # Generated output (gitignored)
+│   ├── index.html                # Homepage (upcoming events)
+│   ├── archiwum/
+│   │   └── index.html            # Archive page (past events)
+│   └── assets/                   # Copied assets
+├── build.js                      # Build script
+├── package.json                  # Dependencies
+├── .github/workflows/deploy.yml  # CI/CD pipeline
+├── nginx.conf.example            # Server configuration
+├── README.md                     # Project documentation
+└── DEPLOYMENT.md                 # Deployment guide
 ```
 
 ## Local Development
@@ -71,7 +81,34 @@ description: Page description
 Your markdown content here...
 ```
 
-### Adding Events
+### Events Integration
+
+Events can come from two sources:
+
+1. **External API** (recommended) - Fetched during build time
+2. **Markdown frontmatter** - Static fallback events
+
+#### API Events (Luma Integration)
+
+Configure the events endpoint in `.env`:
+
+```bash
+# Copy .env.example to .env
+cp .env.example .env
+
+# Edit .env and set your events endpoint
+EVENTS_ENDPOINT=http://localhost:1337/luma_events.json
+EVENTS_TIMEOUT=5000
+```
+
+The build script will:
+- Fetch events from the configured endpoint
+- Parse Luma events JSON schema (see `docs/luma_events.json`)
+- Extract event details (name, date, time, location, etc.)
+- Merge with markdown events (API events appear first)
+- Fallback to markdown events if API is unavailable
+
+#### Markdown Events (Fallback)
 
 Edit `src/content/index.md` and add events to the `events` array in the frontmatter:
 
@@ -84,6 +121,32 @@ events:
     location: Venue Name
     time: "18:30"
 ```
+
+#### Event Types
+
+- `warsztat` - Workshop (green badge)
+- `noc_demo` - Demo night (cyan badge)
+- `meetup` - Regular meetup (default)
+
+### Event Separation
+
+Events are automatically separated into two categories based on the current date:
+
+**Upcoming Events** (`nadchodzace_wydarzenia`)
+- Displayed on the homepage (`/`)
+- Events with date >= today
+- Sorted by date (soonest first)
+
+**Past Events** (`archiwum_wydarzen`)
+- Displayed on archive page (`/archiwum/`)
+- Events with date < today
+- Sorted by date (most recent first)
+
+The build script automatically:
+1. Fetches all events (API + markdown)
+2. Compares event dates with current date
+3. Separates into upcoming and past
+4. Generates two pages with appropriate events
 
 ## Deployment
 
@@ -141,11 +204,12 @@ The build process:
 
 - [ ] Self-host Tailwind CSS build
 - [ ] Self-host fonts
-- [ ] REST API integration for events
+- [x] REST API integration for events (Luma events)
 - [ ] Additional pages (events, about, join as separate pages)
 - [ ] RSS feed generation
 - [ ] Sitemap generation
 - [ ] Image optimization
+- [ ] Cache API responses for faster rebuilds
 
 ## License
 

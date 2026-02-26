@@ -4,6 +4,7 @@ const Handlebars = require('handlebars');
 const MarkdownIt = require('markdown-it');
 const matter = require('gray-matter');
 const { minify } = require('html-minifier');
+require('dotenv').config();
 
 const md = new MarkdownIt({ html: true });
 
@@ -15,6 +16,124 @@ const ASSETS_DIR = path.join(SRC_DIR, 'assets');
 
 // Register Handlebars helpers
 Handlebars.registerHelper('eq', (a, b) => a === b);
+
+function separateEventsByDate(events) {
+  const now = new Date();
+  const upcoming = [];
+  const past = [];
+  
+  events.forEach(event => {
+    // Parse event date (YYYY.MM.DD format)
+    const [year, month, day] = event.date.split('.').map(Number);
+    const eventDate = new Date(year, month - 1, day);
+    
+    // Add end of day to event date for comparison
+    eventDate.setHours(23, 59, 59, 999);
+    
+    if (eventDate >= now) {
+      upcoming.push(event);
+    } else {
+      past.push(event);
+    }
+  });
+  
+  // Sort upcoming events by date (ascending - soonest first)
+  upcoming.sort((a, b) => {
+    const [yearA, monthA, dayA] = a.date.split('.').map(Number);
+    const [yearB, monthB, dayB] = b.date.split('.').map(Number);
+    const dateA = new Date(yearA, monthA - 1, dayA);
+    const dateB = new Date(yearB, monthB - 1, dayB);
+    return dateA - dateB;
+  });
+  
+  // Sort past events by date (descending - most recent first)
+  past.sort((a, b) => {
+    const [yearA, monthA, dayA] = a.date.split('.').map(Number);
+    const [yearB, monthB, dayB] = b.date.split('.').map(Number);
+    const dateA = new Date(yearA, monthA - 1, dayA);
+    const dateB = new Date(yearB, monthB - 1, dayB);
+    return dateB - dateA;
+  });
+  
+  return { upcoming, past };
+}
+
+async function fetchEventsFromAPI() {
+  const endpoint = process.env.EVENTS_ENDPOINT;
+  
+  if (!endpoint) {
+    console.log('ℹ️  No EVENTS_ENDPOINT configured, skipping API fetch');
+    return [];
+  }
+  
+  console.log(`Fetching events from: ${endpoint}`);
+  
+  try {
+    const response = await fetch(endpoint, {
+      signal: AbortSignal.timeout(parseInt(process.env.EVENTS_TIMEOUT || '5000'))
+    });
+    
+    if (!response.ok) {
+      console.warn(`⚠️  Events API returned ${response.status}, using fallback`);
+      return [];
+    }
+    
+    const data = await response.json();
+    
+    // Parse Luma events schema
+    const events = (data.entries || []).map(entry => {
+      const event = entry.event;
+      const startDate = new Date(event.start_at);
+      const endDate = new Date(event.end_at);
+      
+      // Format date as YYYY.MM.DD
+      const formattedDate = startDate.toISOString().split('T')[0].replace(/-/g, '.');
+      
+      // Format time as HH:MM
+      const formattedTime = startDate.toLocaleTimeString('pl-PL', { 
+        hour: '2-digit', 
+        minute: '2-digit',
+        timeZone: event.timezone || 'Europe/Warsaw'
+      });
+      
+      // Extract location
+      const location = event.geo_address_info?.address || 
+                      event.geo_address_info?.short_address || 
+                      'TBA';
+      
+      // Determine event type based on name or other criteria
+      let type = 'meetup';
+      if (event.name.toLowerCase().includes('warsztat') || event.name.toLowerCase().includes('workshop')) {
+        type = 'warsztat';
+      } else if (event.name.toLowerCase().includes('demo')) {
+        type = 'noc_demo';
+      }
+      
+      return {
+        type,
+        date: formattedDate,
+        title: event.name,
+        description: event.description_short || `Spotkanie AI Jam w ${event.geo_address_info?.city || 'Łodzi'}`,
+        location,
+        time: formattedTime,
+        url: event.url,
+        guest_count: entry.guest_count || 0,
+        spots_remaining: entry.ticket_info?.spots_remaining || null
+      };
+    });
+    
+    console.log(`✓ Fetched ${events.length} events from API`);
+    return events;
+    
+  } catch (error) {
+    if (error.name === 'AbortError') {
+      console.warn('⚠️  Events API request timed out, using fallback');
+    } else {
+      console.warn(`⚠️  Failed to fetch events: ${error.message}`);
+    }
+    return [];
+  }
+}
 
 async function loadPartials() {
   const partialsDir = path.join(TEMPLATES_DIR, 'partials');
@@ -46,26 +165,47 @@ async function processMarkdownFile(filePath) {
   };
 }
 
-async function renderPage(contentFile, outputPath) {
+async function renderPage(contentFile, outputPath, apiEvents = [], options = {}) {
   console.log(`Processing: ${contentFile} -> ${outputPath}`);
   
   const { frontmatter, content, markdown } = await processMarkdownFile(
     path.join(CONTENT_DIR, contentFile)
   );
   
+  // Merge API events with markdown events
+  // API events take precedence and come first
+  const markdownEvents = frontmatter.events || [];
+  const mergedEvents = [...apiEvents, ...markdownEvents];
+  
+  // Separate events into upcoming and past
+  const { upcoming, past } = separateEventsByDate(mergedEvents);
+  
+  console.log(`  Events: ${apiEvents.length} from API + ${markdownEvents.length} from markdown = ${mergedEvents.length} total`);
+  console.log(`  Upcoming: ${upcoming.length}, Past: ${past.length}`);
+  
+  // Update frontmatter with separated events
+  const pageData = {
+    ...frontmatter,
+    events: options.showPastEvents ? past : upcoming,
+    upcoming_events: upcoming,
+    past_events: past,
+    events_total: mergedEvents.length,
+    ...options.extraData
+  };
+  
   // Load the appropriate layout template
   const layoutName = frontmatter.layout || 'home';
   const layoutTemplate = await loadTemplate(layoutName);
   
   // Render the layout-specific content
-  const layoutHtml = layoutTemplate(frontmatter);
+  const layoutHtml = layoutTemplate(pageData);
   
   // Load base template
   const baseTemplate = await loadTemplate('base');
   
   // Render final HTML
   const html = baseTemplate({
-    ...frontmatter,
+    ...pageData,
     content: layoutHtml
   });
   
@@ -125,12 +265,20 @@ async function build() {
     await loadPartials();
     console.log('✓ Loaded partials\n');
     
-    // Process pages
-    await renderPage('index.md', path.join(DIST_DIR, 'index.html'));
+    // Fetch events from API
+    const apiEvents = await fetchEventsFromAPI();
+    console.log('');
     
-    // Create subdirectories for clean URLs
-    // For now, we'll just create the homepage
-    // Additional pages can be added later
+    // Process homepage (upcoming events)
+    await renderPage('index.md', path.join(DIST_DIR, 'index.html'), apiEvents);
+    
+    // Process archive page (past events)
+    await renderPage(
+      'archive.md', 
+      path.join(DIST_DIR, 'archiwum', 'index.html'), 
+      apiEvents,
+      { showPastEvents: true }
+    );
     
     // Copy assets
     await copyAssets();
