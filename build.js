@@ -58,23 +58,14 @@ function separateEventsByDate(events) {
   return { upcoming, past };
 }
 
-async function fetchEventsFromAPI() {
-  const endpoint = process.env.EVENTS_ENDPOINT;
-  
-  if (!endpoint) {
-    console.log('ℹ️  No EVENTS_ENDPOINT configured, skipping API fetch');
-    return [];
-  }
-  
-  console.log(`Fetching events from: ${endpoint}`);
-  
+async function fetchEventsFromEndpoint(endpoint, label) {
   try {
     const response = await fetch(endpoint, {
       signal: AbortSignal.timeout(parseInt(process.env.EVENTS_TIMEOUT || '5000'))
     });
     
     if (!response.ok) {
-      console.warn(`⚠️  Events API returned ${response.status}, using fallback`);
+      console.warn(`⚠️  ${label} API returned ${response.status}, using fallback`);
       return [];
     }
     
@@ -122,17 +113,38 @@ async function fetchEventsFromAPI() {
       };
     });
     
-    console.log(`✓ Fetched ${events.length} events from API`);
+    console.log(`✓ Fetched ${events.length} ${label.toLowerCase()}`);
     return events;
     
   } catch (error) {
     if (error.name === 'AbortError') {
-      console.warn('⚠️  Events API request timed out, using fallback');
+      console.warn(`⚠️  ${label} API request timed out, using fallback`);
     } else {
-      console.warn(`⚠️  Failed to fetch events: ${error.message}`);
+      console.warn(`⚠️  Failed to fetch ${label.toLowerCase()}: ${error.message}`);
     }
     return [];
   }
+}
+
+async function fetchEventsFromAPI() {
+  const upcomingEndpoint = process.env.EVENTS_ENDPOINT_UPCOMING;
+  const pastEndpoint = process.env.EVENTS_ENDPOINT_PAST;
+  
+  if (!upcomingEndpoint && !pastEndpoint) {
+    console.log('ℹ️  No event endpoints configured, skipping API fetch');
+    return { upcoming: [], past: [] };
+  }
+  
+  console.log('Fetching events from API...');
+  if (upcomingEndpoint) console.log(`  Upcoming: ${upcomingEndpoint}`);
+  if (pastEndpoint) console.log(`  Past: ${pastEndpoint}`);
+  
+  const [upcoming, past] = await Promise.all([
+    upcomingEndpoint ? fetchEventsFromEndpoint(upcomingEndpoint, 'Upcoming events') : Promise.resolve([]),
+    pastEndpoint ? fetchEventsFromEndpoint(pastEndpoint, 'Past events') : Promise.resolve([])
+  ]);
+  
+  return { upcoming, past };
 }
 
 async function loadPartials() {
@@ -165,7 +177,7 @@ async function processMarkdownFile(filePath) {
   };
 }
 
-async function renderPage(contentFile, outputPath, apiEvents = [], options = {}) {
+async function renderPage(contentFile, outputPath, apiEvents = { upcoming: [], past: [] }, options = {}) {
   console.log(`Processing: ${contentFile} -> ${outputPath}`);
   
   const { frontmatter, content, markdown } = await processMarkdownFile(
@@ -173,14 +185,18 @@ async function renderPage(contentFile, outputPath, apiEvents = [], options = {})
   );
   
   // Merge API events with markdown events
-  // API events take precedence and come first
+  // API events are already separated, markdown events need separation
   const markdownEvents = frontmatter.events || [];
-  const mergedEvents = [...apiEvents, ...markdownEvents];
+  const { upcoming: markdownUpcoming, past: markdownPast } = separateEventsByDate(markdownEvents);
   
-  // Separate events into upcoming and past
-  const { upcoming, past } = separateEventsByDate(mergedEvents);
+  // Merge API events with corresponding markdown events (API events first)
+  const upcoming = [...apiEvents.upcoming, ...markdownUpcoming];
+  const past = [...apiEvents.past, ...markdownPast];
   
-  console.log(`  Events: ${apiEvents.length} from API + ${markdownEvents.length} from markdown = ${mergedEvents.length} total`);
+  const totalApiEvents = apiEvents.upcoming.length + apiEvents.past.length;
+  const totalEvents = upcoming.length + past.length;
+  
+  console.log(`  Events: ${totalApiEvents} from API + ${markdownEvents.length} from markdown = ${totalEvents} total`);
   console.log(`  Upcoming: ${upcoming.length}, Past: ${past.length}`);
   
   // Update frontmatter with separated events
@@ -189,7 +205,7 @@ async function renderPage(contentFile, outputPath, apiEvents = [], options = {})
     events: options.showPastEvents ? past : upcoming,
     upcoming_events: upcoming,
     past_events: past,
-    events_total: mergedEvents.length,
+    events_total: totalEvents,
     ...options.extraData
   };
   

@@ -25,7 +25,8 @@ jobs:
       
       - name: Create .env file
         run: |
-          echo "EVENTS_ENDPOINT=${{ secrets.EVENTS_ENDPOINT }}" > .env
+          echo "EVENTS_ENDPOINT_PAST=${{ secrets.EVENTS_ENDPOINT_PAST }}" > .env
+          echo "EVENTS_ENDPOINT_UPCOMING=${{ secrets.EVENTS_ENDPOINT_UPCOMING }}" >> .env
           echo "EVENTS_TIMEOUT=5000" >> .env
       
       - name: Build site
