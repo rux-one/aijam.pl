@@ -23,6 +23,11 @@ jobs:
       - name: Install dependencies
         run: npm ci
       
+      - name: Create .env file
+        run: |
+          echo "EVENTS_ENDPOINT=${{ secrets.EVENTS_ENDPOINT }}" > .env
+          echo "EVENTS_TIMEOUT=5000" >> .env
+      
       - name: Build site
         run: npm run build
       
