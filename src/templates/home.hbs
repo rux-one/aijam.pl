@@ -47,7 +47,11 @@
     </div>
     <div class="grid md:grid-cols-2 gap-6">
       {{#each events}}
+      {{#if url}}
+      <a href="https://lu.ma/{{url}}" target="_blank" rel="noopener noreferrer" class="group p-4 sm:p-6 border border-zinc-200 dark:border-zinc-800 rounded-xl bg-white dark:bg-zinc-900 hover:border-emerald-500 active:border-emerald-600 transition-all duration-300 touch-manipulation block">
+      {{else}}
       <div class="group p-4 sm:p-6 border border-zinc-200 dark:border-zinc-800 rounded-xl bg-white dark:bg-zinc-900 hover:border-emerald-500 active:border-emerald-600 transition-all duration-300 touch-manipulation">
+      {{/if}}
         <div class="flex items-start justify-between mb-3 sm:mb-4 gap-2">
           <span class="px-2 sm:px-3 py-1 text-xs font-medium bg-{{#if (eq type 'warsztat')}}emerald{{else}}cyan{{/if}}-500/10 text-{{#if (eq type 'warsztat')}}emerald{{else}}cyan{{/if}}-500 rounded-full whitespace-nowrap">{{type}}</span>
           <span class="text-xs sm:text-sm text-zinc-500 font-mono">{{date}}</span>
@@ -69,7 +73,19 @@
             {{time}}
           </span>
         </div>
+      {{#if spots_remaining}}
+      <span class="flex items-center gap-1 text-emerald-500">
+        <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+        </svg>
+        {{spots_remaining}} miejsc
+      </span>
+      {{/if}}
+      {{#if url}}
+      </a>
+      {{else}}
       </div>
+      {{/if}}
       {{/each}}
     </div>
     {{!-- <div class="mt-6 sm:mt-8 text-center">
