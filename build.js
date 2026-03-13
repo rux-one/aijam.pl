@@ -17,44 +17,39 @@ const ASSETS_DIR = path.join(SRC_DIR, 'assets');
 // Register Handlebars helpers
 Handlebars.registerHelper('eq', (a, b) => a === b);
 
+// Parse date in either DD.MM.YYYY (Polish/markdown) or YYYY.MM.DD (API) format
+function parseEventDate(dateStr) {
+  const parts = dateStr.split('.').map(Number);
+
+  // Detect format based on first part
+  if (parts[0] && parts[0] > 31) {
+    // YYYY.MM.DD format (API)
+    return { year: parts[0], month: parts[1], day: parts[2] };
+  } else {
+    // DD.MM.YYYY format (Polish/markdown)
+    return { year: parts[2], month: parts[1], day: parts[0] };
+  }
+}
+
 function separateEventsByDate(events) {
   const now = new Date();
   const upcoming = [];
   const past = [];
-  
+
   events.forEach(event => {
-    // Parse event date (YYYY.MM.DD format)
-    const [year, month, day] = event.date.split('.').map(Number);
+    const { year, month, day } = parseEventDate(event.date);
     const eventDate = new Date(year, month - 1, day);
-    
+
     // Add end of day to event date for comparison
     eventDate.setHours(23, 59, 59, 999);
-    
+
     if (eventDate >= now) {
       upcoming.push(event);
     } else {
       past.push(event);
     }
   });
-  
-  // Sort upcoming events by date (ascending - soonest first)
-  upcoming.sort((a, b) => {
-    const [yearA, monthA, dayA] = a.date.split('.').map(Number);
-    const [yearB, monthB, dayB] = b.date.split('.').map(Number);
-    const dateA = new Date(yearA, monthA - 1, dayA);
-    const dateB = new Date(yearB, monthB - 1, dayB);
-    return dateA - dateB;
-  });
-  
-  // Sort past events by date (descending - most recent first)
-  past.sort((a, b) => {
-    const [yearA, monthA, dayA] = a.date.split('.').map(Number);
-    const [yearB, monthB, dayB] = b.date.split('.').map(Number);
-    const dateA = new Date(yearA, monthA - 1, dayA);
-    const dateB = new Date(yearB, monthB - 1, dayB);
-    return dateB - dateA;
-  });
-  
+
   return { upcoming, past };
 }
 
@@ -129,21 +124,23 @@ async function fetchEventsFromEndpoint(endpoint, label) {
 async function fetchEventsFromAPI() {
   const upcomingEndpoint = process.env.EVENTS_ENDPOINT_UPCOMING;
   const pastEndpoint = process.env.EVENTS_ENDPOINT_PAST;
-  
+
   if (!upcomingEndpoint && !pastEndpoint) {
     console.log('ℹ️  No event endpoints configured, skipping API fetch');
     return { upcoming: [], past: [] };
   }
-  
+
   console.log('Fetching events from API...');
   if (upcomingEndpoint) console.log(`  Upcoming: ${upcomingEndpoint}`);
   if (pastEndpoint) console.log(`  Past: ${pastEndpoint}`);
-  
+
+  // Fetch from both endpoints and return uncombined
+  // They will be combined and re-separated by date during rendering
   const [upcoming, past] = await Promise.all([
     upcomingEndpoint ? fetchEventsFromEndpoint(upcomingEndpoint, 'Upcoming events') : Promise.resolve([]),
     pastEndpoint ? fetchEventsFromEndpoint(pastEndpoint, 'Past events') : Promise.resolve([])
   ]);
-  
+
   return { upcoming, past };
 }
 
@@ -177,34 +174,72 @@ async function processMarkdownFile(filePath) {
   };
 }
 
+async function loadAllMarkdownEvents() {
+  // Read all markdown files from content directory and collect events from all of them
+  const contentFiles = await fs.readdir(CONTENT_DIR);
+  let allEvents = [];
+
+  for (const file of contentFiles) {
+    if (file.endsWith('.md')) {
+      const { frontmatter } = await processMarkdownFile(path.join(CONTENT_DIR, file));
+      if (frontmatter.events && Array.isArray(frontmatter.events)) {
+        allEvents = [...allEvents, ...frontmatter.events];
+      }
+    }
+  }
+
+  return allEvents;
+}
+
+function sortEventsByDate(events, ascending = true) {
+  return events.sort((a, b) => {
+    const datePartsA = parseEventDate(a.date);
+    const datePartsB = parseEventDate(b.date);
+    const dateA = new Date(datePartsA.year, datePartsA.month - 1, datePartsA.day);
+    const dateB = new Date(datePartsB.year, datePartsB.month - 1, datePartsB.day);
+    return ascending ? dateA - dateB : dateB - dateA;
+  });
+}
+
 async function renderPage(contentFile, outputPath, apiEvents = { upcoming: [], past: [] }, options = {}) {
   console.log(`Processing: ${contentFile} -> ${outputPath}`);
-  
+
   const { frontmatter, content, markdown } = await processMarkdownFile(
     path.join(CONTENT_DIR, contentFile)
   );
-  
-  // Merge API events with markdown events
-  // API events are already separated, markdown events need separation
-  const markdownEvents = frontmatter.events || [];
-  const { upcoming: markdownUpcoming, past: markdownPast } = separateEventsByDate(markdownEvents);
-  
-  // Merge API events with corresponding markdown events (API events first)
-  const upcoming = [...apiEvents.upcoming, ...markdownUpcoming];
-  const past = [...apiEvents.past, ...markdownPast];
-  
+
+  // Load ALL markdown events from all content files (not just current file)
+  const allMarkdownEvents = await loadAllMarkdownEvents();
+
+  // Combine ALL events (API + markdown) first, then remove duplicates
+  const allEvents = [...apiEvents.upcoming, ...apiEvents.past, ...allMarkdownEvents];
+  // Remove duplicates (events with same title and date)
+  const uniqueEventsMap = new Map();
+  allEvents.forEach(event => {
+    const key = `${event.title}:${event.date}`;
+    if (!uniqueEventsMap.has(key)) {
+      uniqueEventsMap.set(key, event);
+    }
+  });
+  const uniqueEvents = Array.from(uniqueEventsMap.values());
+  const { upcoming, past } = separateEventsByDate(uniqueEvents);
+
+  // Sort each category by date
+  const sortedUpcoming = sortEventsByDate(upcoming, true); // ascending = soonest first
+  const sortedPast = sortEventsByDate(past, false); // descending = most recent first
+
   const totalApiEvents = apiEvents.upcoming.length + apiEvents.past.length;
-  const totalEvents = upcoming.length + past.length;
-  
-  console.log(`  Events: ${totalApiEvents} from API + ${markdownEvents.length} from markdown = ${totalEvents} total`);
-  console.log(`  Upcoming: ${upcoming.length}, Past: ${past.length}`);
+  const totalEvents = sortedUpcoming.length + sortedPast.length;
+
+  console.log(`  Events: ${totalApiEvents} from API + ${allMarkdownEvents.length} from markdown = ${uniqueEvents.length} total (after dedup)`);
+  console.log(`  Upcoming: ${sortedUpcoming.length}, Past: ${sortedPast.length}`);
   
   // Update frontmatter with separated events
   const pageData = {
     ...frontmatter,
-    events: options.showPastEvents ? past : upcoming,
-    upcoming_events: upcoming,
-    past_events: past,
+    events: options.showPastEvents ? sortedPast : sortedUpcoming,
+    upcoming_events: sortedUpcoming,
+    past_events: sortedPast,
     events_total: totalEvents,
     ...options.extraData
   };
